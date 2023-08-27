@@ -1,3 +1,19 @@
 site_name: Cole Isaac
 theme:
   name: material
+  palette: 
+    # Light mode
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7 
+        name: Dark Mode
+
+    # Dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Light Mode
