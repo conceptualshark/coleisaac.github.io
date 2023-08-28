@@ -1,19 +1,37 @@
-site_name: Cole Isaac
+site_name: Cole Isaac, Technical Writer
 theme:
   name: material
   palette: 
-    # Light mode
-    - scheme: default
-      primary: deep purple
-      accent: cyan
-      toggle:
-        icon: material/brightness-7 
-        name: Dark Mode
-
     # Dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: deep purple
       accent: cyan
       toggle:
         icon: material/brightness-4
         name: Light Mode
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7 
+        name: Dark Mode
+  features:
+    - toc.integrate 
+    - content.code.copy
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+nav:
+  - About: 'index.md'
+  - Resume: 'resume.md'
+  - 'Portfolio':
+    - API Requests: 'portfolio/api-docs.md'
+    - Privacy Regulations: 'portfolio/privacy-regulations.md'
