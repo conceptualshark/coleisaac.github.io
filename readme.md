@@ -22,7 +22,7 @@ Ensure Docker is running. From the root directory of the cloned project, run the
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 ```
 
-Docker will serve the site at [localhost:8000](localhost:8000).
+Docker will serve the site at [localhost:8000](localhost:8000). 
 
 ## :books: Learn more
 Find out more about my work on [LinkedIn](https://www.linkedin.com/in/cole-isaac/).
