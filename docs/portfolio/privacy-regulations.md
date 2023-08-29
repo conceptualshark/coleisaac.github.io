@@ -1,49 +1,31 @@
-## Summary
---
+# Article: Privacy Regulations
+
+!!! Summary
+    What was this article for?
 
 ## Overview
 On January 1, 2023, both the CPRA (California’s revised privacy regulation) and CDPA (Virginia’s first privacy regulation) will come into effect. Both of these laws extend consumer rights over how companies process their data, and create new requirements for business compliance.
-In short,
-CPRA (California) enforces a user’s right to opt out of sensitive data processing.
-CDPA (Virginia) enforces a user’s right to opt in to sensitive data processing.
-CPRA and CDPA have different definitions of what constitutes sensitive data, as well as the type of business processes that require management.
 
+In short,
+
+- CPRA (California) enforces a user’s right to opt out of sensitive data processing.
+- CDPA (Virginia) enforces a user’s right to opt in to sensitive data processing.
+- CPRA and CDPA have different definitions of what constitutes sensitive data, as well as the type of business processes that require management.
 
 The specific opt-out requirements for each regulation are as follows:
-Opt-Out Required
-Description
-CPRA
-CPDA
-Targeted Ads
-Advertising that uses personal data to personalize the content or location of the ad.
-NO
-YES
-“Sale” of personal information/data
-Under CPRA, a sale relates to the sharing of information for monetary exchange, or an exchange of value.
 
-Under CDPA, a sale is exclusively for money.
-YES
-YES
-Profiling
-Under CDPA, profiling refers to automated decision-making about a user.
-NO
-YES
-
-
+| Opt-Out Required | Description | CPRA | CPDA |
+|---|---|:---:|:---:|
+| Targeted Ads | Advertising that uses personal data to personalize the content or location of the ad. | NO | YES |
+| “Sale” of personal information/data | Under CPRA, a sale relates to the sharing of information for monetary exchange, or an exchange of value. Under CDPA, a sale is exclusively for money. | YES | YES | 
+| Profiling | Under CDPA, profiling refers to automated decision-making about a user. | NO | YES | 
 
 The specific consent requirements for each regulation are as follows:
-Treatment of Sensitive Information
-Description
-CPRA
-CPDA
-Opt-out Consent
-Explicit opt-out. Data may be used if the user does not opt-out.
-YES
-NO
-Opt-in Consent
-Explicit opt-in. Data may only be used after the user has given informed and explicit consent.
-NO
-YES
+
+| Treatment of Sensitive Information | Description | CPRA | CPDA |
+|---|---|:---:|:---:|
+| Opt-out Consent | Explicit opt-out. Data may be used if the user does not opt-out. | YES | NO |
+| Opt-in Consent | Explicit opt-in. Data may only be used after the user has given informed and explicit consent. | NO | YES |
 
 
 ## Response
@@ -53,11 +35,12 @@ Consent preference updates will now be stored for reporting and auditing purpose
 
 ## Support in Ethyca Pro
 To ensure compliance with both CPRA and CPDA, Ethyca will provide enhancements in the current Consent Management experience, including:
-Grouping systems into the categories of data they process (e.g. data, personal data, sensitive personal data) for necessary geographic regions (e.g. Virginia, California)
-The ability to set the end-user action for each data category as opt-in or opt-out
-Allowing subjects to opt in or out of configured data categories based on their geographic location 
-Storing end-user consent preferences in a browser cookie to toggle browser-side data flows
-Recording consent preference changes for reporting, auditing, and management
+
+- Grouping systems into the categories of data they process (e.g. data, personal data, sensitive personal data) for necessary geographic regions (e.g. Virginia, California)
+- The ability to set the end-user action for each data category as opt-in or opt-out
+- Allowing subjects to opt in or out of configured data categories based on their geographic location 
+- Storing end-user consent preferences in a browser cookie to toggle browser-side data flows
+- Recording consent preference changes for reporting, auditing, and management
 
 ## Level of Effort
 Any privacy officer or engineer comfortable working with Ethyca’s current Control Panel and Consent Management will be able to configure the additional privacy settings in Ethyca Pro in a matter of minutes. 
