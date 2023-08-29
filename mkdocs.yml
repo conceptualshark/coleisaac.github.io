@@ -1,6 +1,8 @@
 site_name: Cole Isaac, Technical Writer
 theme:
   name: material
+  logo: /assets/logo.png
+  favicon: /assets/logo.png
   palette: 
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -19,19 +21,55 @@ theme:
         icon: material/brightness-7 
         name: Dark Mode
   features:
-    - toc.integrate 
     - content.code.copy
+    - navigation.expand
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
+  - tables
+  - md_in_html
+  - attr_list
+  - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/cole-isaac/
+    - icon: fontawesome/brands/github
+      link: https://github.com/conceptualshark
+    - icon: material/email
+      link: colegarbo@gmail.com
+      name: email
+copyright: Copyright &copy; 2023 Cole Isaac Garbo
+extra_css:
+  - assets/overrides.css
 nav:
   - About: 'index.md'
   - Resume: 'resume.md'
   - 'Portfolio':
-    - API Requests: 'portfolio/api-docs.md'
-    - Privacy Regulations: 'portfolio/privacy-regulations.md'
+    - API Documentation: 'portfolio/api-docs.md'
+    - 'Article: Privacy Regulations': 'portfolio/privacy-regulations.md'
+    - Installation Guide: 'portfolio/installation-guide.md'
+    - Release Newsletter: 'portfolio/release-newsletter.md'
+    - Release Notes: 'portfolio/release-notes.md'
+    - Style Guide: 'portfolio/style-guide.md'
+    - 'User Guide: Privacy Requests': 'portfolio/privacy-requests.md'
+    - 'User Guide: App Connectors': 'portfolio/connectors-guide.md'
+    - 'User Guide: SSL Certificates': 'portfolio/ssl-certificates.md'
+
+
+
+
+
+
+

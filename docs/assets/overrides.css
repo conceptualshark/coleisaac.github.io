@@ -1,0 +1,143 @@
+
+/* Light mode variable overrides */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #7f7295;
+    --md-default-fg-color--lighter: #000000;
+    --md-default-fg-color--lightest: #000000;
+    --md-typeset-a-color: #8155cc;
+    --accent: #6d6877;
+}
+
+/* Dark mode variable overrides */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #7f7295;
+    --md-default-fg-color--lighter: #fff;
+    --md-default-fg-color--lightest: #ffffff;
+    --accent: #c3b8d6;
+}
+
+.md-typeset h1 {
+    color: var(--accent);
+}
+
+.md-typeset h1, .md-typeset h2 {
+    font-weight: 500;
+}
+
+.md-typeset h3 {
+    color: var(--accent);
+}
+
+.md-typeset h3 + blockquote {
+    margin-top: -.5em;
+}
+
+.md-typeset h3 + h4 {
+    margin-top: -1em;
+}
+
+.md-typeset h3 + h4 + p {
+    margin-top: -1em;
+}
+
+[dir="ltr"] .md-typeset blockquote {
+    border-left: .2rem solid var(--md-primary-fg-color);
+    color: var(--md-default-fg-color--lightest);
+}
+
+[dir="ltr"] .md-header__title {
+    margin-left: unset;
+}
+
+.md-nav__title {
+    display: none;
+}
+  
+.md-typeset #resume ul:not([hidden]) {
+    column-count: 3;
+}
+
+.md-typeset #api ul:not([hidden]) {
+    column-count: 2;
+}
+#resume li::marker { content: ""; }
+
+@media screen and (max-width: 40em) {
+    .md-typeset #resume ul:not([hidden]) {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 25em) {
+     .md-typeset #resume ul:not([hidden]) {
+        column-count: 1;
+    }
+}
+
+.bump { 
+    display: block;
+    margin-top: -1em;
+}
+
+.indent {
+    margin-left: 1em;
+}
+
+.icons {
+    display: flex;
+    width: 30%;
+    margin: auto;
+    justify-content: space-around;
+    font-size: 1.5em;
+}
+
+.icons a {
+    color: var(--accent);
+}
+
+li > span {
+    color: var(--md-default-fg-color--lighter);
+}
+
+h1 .md-button--primary {
+    float: right;
+    margin: 0 .5em;
+    font-size: .5em;
+}
+
+.highlight span.filename {
+    color: var(--md-default-fg-color--light);
+    border-bottom: .05rem solid var(--md-default-fg-color--light);
+}
+
+.md-typeset #api table:not([class]) {
+    border: unset;
+    margin-left: 2em;
+    font-size: unset;
+}
+
+.md-typeset th {
+    background: var(--md-code-bg-color); 
+}
+
+.md-typeset #api th {
+    display: none;
+}
+
+.md-typeset #api table:not([class]) td {
+    border-top: unset;
+    border-bottom: .05rem solid var(--md-typeset-table-color);
+    padding: .5em 1.25em;
+}
+
+.md-typeset #api table:not([class]) tr:last-child td {
+    border-bottom: unset;
+}
+
+.md-typeset #api table:not([class]) tbody tr:hover {
+    background: unset;
+}
+
+.md-typeset code {
+    padding: .3em;
+}
