@@ -19,10 +19,10 @@ git clone https://github.com/conceptualshark/conceptualshark.github.io.git
 Ensure Docker is running. From the root directory of the cloned project, run the following command:
 
 ```
-docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+docker compose up
 ```
 
-Docker will serve the site at [localhost:8000](localhost:8000). 
+The included Docker Compose file will install all the project requirements, and serve the site at [localhost:8000](localhost:8000). 
 
 ## :books: Learn More
 Find out more about my work on [LinkedIn](https://www.linkedin.com/in/cole-isaac/).
