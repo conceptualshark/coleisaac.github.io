@@ -11,7 +11,8 @@ For more information on policies, see the [execution policies](./execution_polic
 
 ## Submit a privacy request
 
-!!! Tip "Privacy Requests are executed immediately by default. This setting may be changed in your `fides.toml` configuration file."
+!!! Tip 
+    Privacy Requests are executed immediately by default. This setting may be changed in your `fides.toml` configuration file.
 
 Privacy requests are submitted by calling the [Privacy Request](../api/index#operations-tag-Privacy_Requests) endpoint:
 
