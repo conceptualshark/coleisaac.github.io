@@ -1,4 +1,6 @@
 site_name: Cole Isaac, Technical Writer
+
+# Themes 
 theme:
   name: material
   logo: /assets/logo.png
@@ -23,6 +25,11 @@ theme:
   features:
     - content.code.copy
     - navigation.expand
+plugins:
+  - search
+  - render_swagger
+  
+# Extensions 
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -34,7 +41,6 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.details
-  - tables
   - md_in_html
   - attr_list
   - admonition
@@ -52,8 +58,12 @@ extra:
       link: colegarbo@gmail.com
       name: email
 copyright: Copyright &copy; 2023 Cole Isaac Garbo
+
+# CSS and JS overrides 
 extra_css:
   - assets/overrides.css
+
+# Navigation 
 nav:
   - About: 'index.md'
   - Resume: 'resume.md'

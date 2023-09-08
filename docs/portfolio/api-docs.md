@@ -3,7 +3,7 @@
 !!! Summary
     The following is a simplified version of design document for a set of endpoints. The related microservice handled the storage and retrieval of referred or rejected customer applications, known as Referrals. 
     
-    This document was created for internal use, education, and planning, and used for the ultimate creation of the REST service.
+    This document was created for internal use, education, and planning, and used for the ultimate creation of the REST service. It has been updated here to include interactive Swagger documentation, built using OpenAPI 3.0.
 
 ## Referral API
 All endpoints designed to create and return individual or multiple referrals.
@@ -134,3 +134,6 @@ Add a new Referral to the database. Response must include the generated unique R
 | `201` | Success. The referral was created or retrieved successfully. |
 | `400` | Wrong parameters. Invalid or missing mandatory data (e.g. status = “happy”). |
 | `500` | Server encountered an error while serving this request. |
+
+## Swagger Docs
+!!swagger referrals.json!!
