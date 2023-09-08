@@ -141,3 +141,7 @@ h1 .md-button--primary {
 .md-typeset code {
     padding: .3em;
 }
+
+.md-search-result__meta {
+    background-color: unset;
+}
