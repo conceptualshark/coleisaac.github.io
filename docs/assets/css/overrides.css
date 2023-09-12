@@ -145,3 +145,11 @@ h1 .md-button--primary {
 .md-search-result__meta {
     background-color: unset;
 }
+
+.md-typeset img {
+    border-radius: 10px;
+}
+
+p > .md-button {
+    margin-left: 1em;
+}

@@ -11,5 +11,5 @@ Techincal writing exists at a crossroads of **collaboration**, **education**, an
 
 [:fontawesome-brands-github:](https://github.com/conceptualshark)
 
-[:material-email:](colegarbo@gmail.com)
+[:material-email:](mailto:colegarbo@gmail.com)
 </div>
