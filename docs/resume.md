@@ -1,6 +1,6 @@
 # Cole Isaac, MSCS [Download :fontawesome-solid-file-pdf:](#){ .md-button .md-button--primary }
 
-A passonate communicator with a mind for organization and analysis, culminating in documentation that is accurate, accessible, and effective. Dedicated to advocacy in all forms: user, teammate, and self. 
+A passionate communicator with a mind for organization and analysis, culminating in documentation that is accurate, accessible, and effective. Dedicated to advocacy in all forms: user, teammate, and self. 
 
 <div id="resume" markdown>
 ## Education
@@ -15,11 +15,8 @@ _Northeastern University • Boston, MA_
 > **Information Privacy Management Professional**  
 _International Association of Privacy Professionals_
 
-> **Certificate in Applied Behavior Analysis**  
-_University of Washington_
-
-> **Graduate Certificate in Biology**  
-_North Carolina State University_
+> **Certificate in Writing**  
+_Enrolled - University of Washington_
 
 ## Technical Knowledge
 ### Language Proficiencies
@@ -59,36 +56,47 @@ _North Carolina State University_
 <span class="bump"><strong>Technical Writer</strong> (<em>Jan. 2023 - Present</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium:
+:material-circle-medium: Serve as the primary technical writer for a new cloud-based product launch, generating accurate and informed documentation based on stakeholder requirements and trial user feedback, leading to a successful GA release in September 2023 with continued fast-follow support
 
-:material-circle-medium:
+:material-circle-medium: Collaborate with SMEs and project stakeholders to document release-related features and functionality across multiple BeyondTrust products, applications, and third-party integrations
 
-:material-circle-medium:
+:material-circle-medium: Peer-review and manage change requests for teammates according to internal style guidelines, providing constructive feedback and direct edits to achieve a unified voice across products
 
-:material-circle-medium:
+:material-circle-medium: Modernize existing content according to a Jobs-to-be-Done framework, refactoring and refreshing both guides and the project information architecture, increasing accessibility, usability, and reducing related Support Team responses
+
+:material-circle-medium: Assist in the creation of agile development processes and project tracking initiatives, evaluating gaps in team knowledge to design internal education opportunities and reduce skill and knowledge siloing 
+
+:material-circle-medium: Participate in UX discussions and implementation to align product language with user feedback, ensuring guides and manuals reflect the latest product updates, and in-product documentation adheres to technical communication standards 
 </div> 
 
 ### Ethyca
 <span class="bump"><strong>Principal Technical Writer</strong> (<em>Jan. 2022 - Jan. 2023</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Modernized and developed feature and usage content for both open-source software and paid   product offerings, reducing the barrier to entry and retention for multiple targeted personas  
+:material-circle-medium: Lead an initiative to refactor product documentation methods, including the migration of content between Mkdocs and Vercel deployment pipelines, and assisted in development of the final website design and information architecture
 
-:material-circle-medium: Produced key documentation for high-profile client acquisition and marquee brands, including implementation instructions for proof-of-concept tools and novel application architectures  
+:material-circle-medium: Authored feature documentation for both open-source software and paid product offerings, reducing the barrier of entry for new users and increasing customer retention
 
-:material-circle-medium: Orchestrated internal processes to align documentation updates with marketing strategies and engineering releases, allowing engineering and documentation work to occur synchronously  
+:material-circle-medium: Produced key training manuals for high-profile client acquisition and marquee brands, including usage instructions for proof-of-concept tools and novel application architectures  
+
+:material-circle-medium: Created an internal policies and procedures manual to align documentation updates with marketing strategies and engineering releases, allowing  synchronously  
 
 :material-circle-medium: Ensured SOC 2 audit compliance with regular, comprehensive product updates, working with security teams to deliver up-to-date release reports and communicate on vulnerabilities 
 </div>
 
 ### Berkshire Hathaway Specialty Insurance
-<span class="bump"><strong>Software Engineer</strong> (<em>Jan. 2020 - Jan. 2022</em>)</span>
+<span class="bump"><strong>Software Engineer</strong> (<em>May 2019 - Jan. 2022</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Designed, implemented, and documented the API for storing and accessing subscription renewal records in an RDS-backed Golang microservice, including successful migrations of legacy data
+:material-circle-medium: Designed and developed the API and RDS-backed Golang microservice for storing and accessing subscription renewal records, including the successful migration of legacy data
 
-:material-circle-medium: Led discovery on and served as lead developer for the enhancement of digital insurance products, allowing product owners to customize desired features per product version 
+:material-circle-medium: Lead implementation on existing product enhancements, allowing product owners to customize desired features per product version through site-embedded dashboards 
 
-:material-circle-medium: Maintained and generated technical documentation for all assigned projects, overseeing internal resources and processes to enable cross-team collaboration and reduce information siloing
+:material-circle-medium: Developed a Golang event-listener Lambda to integrate SendGrid email automations with current and future microservices, reducing reliance on deprecated legacy software
+
+:material-circle-medium: Independently researched and implemented an AWS-backed streaming pipeline for storing event records published by internal microservices, assisting in audit compliance, error logging, and incident triage
+
+:material-circle-medium: Spearheaded a campaign related to company-wide awareness of personal pronouns and
+gender identity, creating a cross-departmental resource hub and associated presentation
 </div>
 </div>
