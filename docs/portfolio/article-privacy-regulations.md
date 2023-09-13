@@ -1,7 +1,9 @@
 # Article: Privacy Regulations
 
-!!! Summary
-    What was this article for?
+## Summary
+What was this article for?
+
+---
 
 ## Overview
 On January 1, 2023, both the CPRA (California’s revised privacy regulation) and CDPA (Virginia’s first privacy regulation) will come into effect. Both of these laws extend consumer rights over how companies process their data, and create new requirements for business compliance.

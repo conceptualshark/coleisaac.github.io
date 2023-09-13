@@ -69,6 +69,8 @@ _Enrolled - University of Washington_
 :material-circle-medium: Participate in UX discussions and implementation to align product language with user feedback, ensuring guides and manuals reflect the latest product updates, and in-product documentation adheres to technical communication standards
 
 :material-circle-medium: Manage research and design for the generation of in-product documentation across cloud products, utilizing single-source methods to ensure accuracy between projects and minimize maintenance
+
+:material-circle-medium: Coordinated documentation and annotation efforts to drive Gartner Magic Quadrant reporting, with BeyondTrust named a 2023 Leader in Privileged Access Management
 </div> 
 
 ### Ethyca

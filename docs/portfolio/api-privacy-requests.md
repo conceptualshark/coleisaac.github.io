@@ -1,21 +1,21 @@
-# User Guide: Privacy Requests
+# API Documentation: Privacy Requests
 
-!!! Summary
-    While serving as a Technical Writer for Ethyca...
+## Summary
 
-## What is a Privacy Request?
+Prior to moving to a deployable webserver with a built-in UI, the [Fides](https://github.com/ethyca/fides) privacy automation platform relied on detailed API usage guides to walk users through available features and tools. This guide served to introduce technical users to the legal aspect of privacy requests and requirements, and document the methods developers could use to integrate Fides' open-source software into their workflows.
 
-A privacy request represents an ask from a user to perform an action on their identity data. The request itself identifies the user by email address, phone number, social security number, or other identifiable information. The data that will be affected, and how it's affected, is described in an execution policy associated with the request.
+---
 
-For more information on policies, see the [execution policies](./execution_policies#rule-attributes) guide.
+## What is a privacy request?
+Privacy requests are Fides' representation of Data Subject Requests (DSRs) or Data Subject Access Requests (DSARs). Laws like the European Union’s **GDPR**, California’s **CCPA**, and Connecticut’s **CTDPA** grant individuals the legal right to access, modify, or delete the personal data that a company holds on them. 
 
-## Submit a privacy request
+With Fides, privacy requests submitted by your users are fulfilled immediately and automatically, returning and impacting data described by customizable execution policies.
 
-!!! Tip 
-    Privacy Requests are executed immediately by default. This setting may be changed in your `fides.toml` configuration file.
+## Overview
 
-Privacy requests are submitted by calling the [Privacy Request](../api/index#operations-tag-Privacy_Requests) endpoint:
+The `/api/v1/privacy-request` API is a collection of routes that `create`, `read`, and `update` privacy requests and related actions. Use these endpoints to create a custom privacy request experience.
 
+## Create a privacy request
 ```json title="<code>POST /api/v1/privacy-request</code>"
 [
   {
@@ -32,32 +32,33 @@ Privacy requests are submitted by calling the [Privacy Request](../api/index#ope
 
 The above request will apply the `a-demo-policy` execution policy to all target data that can be generated from the email address `identity@example.com`, and the phone number `+1 (123) 456 7891`. 
 
+!!! Info
+     Execution policies specify what actions to take when a user submits a request to retrieve or delete their data. These policies describe _how_ to access, mask, or erase any information that matches the submission.
+
 | Attribute | Description |
 |---|---|
-| `external_id` | *Optional.* An identifier that lets you track the privacy request. See [Report on Privacy Requests](./reporting) for more information. |
-| `requested_at` | *Optional.* An ISO8601 timestamp that specifies the moment that the request was submitted. Defaults to the `created_at` time if not specified. |
-| `policy_key` | Identifies the [execution policy](./execution_policies) applied to this request. |
+| `external_id` | *Optional.* An identifier to track the privacy request for reporting. |
+| `requested_at` | *Optional.* An ISO8601 timestamp specifying the moment that the request was submitted. Defaults to the `created_at` time if not specified. |
+| `policy_key` | Identifies the execution policy applied to this request. |
 | `identities` | An array of objects. These objects identify any users whose data will be affected by the execution policy. Each object identifies a single user.  |
 
 
-### Enable subject identity verification 
-Verifying user identity prior to processing their privacy request requires the following:
+### Subject identity verification 
+Fides supports user verification prior to request processing. With identify verification enabled, a user will be emailed a six-digit code when they submit a privacy request. They must supply that verification code to Fides to continue privacy request execution.  
 
-1. Set the `subject_identity_verification_required` variable in your `fides.toml` to `TRUE`. 
-2. [Configure Emails](.email_communications) that lets Fides send automated emails to your users.
+!!! Note
+    To use identity verification, the `subject_identity_verification_required` variable in your `fides.toml` configuration file must be set to `TRUE`.
+    
+The privacy request status is set to `identity_unverified` until the verification request receives a response.
 
-With identify verification enabled, a user will be emailed a six-digit code when they submit a privacy request. They must supply that verification code to Fides to continue privacy request execution.  
-
-Until the Privacy Request identity is verified, it will have a status of `identity_unverified`:
-
-```json title="<code>POST api/v1/privacy-request/<privacy_request_id>/verify</code>"
-{"code": "<verification code here>"}
+```json title="<code>POST api/v1/privacy-request/{privacy_request_id}/verify</code>"
+{"code": "verification code"}
 ```
 
-## Privacy request actions
-### Approve and deny privacy requests
+## Approve and deny privacy requests
 
- Fides processes privacy requests immediately by default. To review privacy requests before they are executed, the `require_manual_request_approval` variable in your `fides.toml` must be set to `TRUE`.
+!!! Note
+    Fides processes privacy requests immediately by default. To review privacy requests before they are executed, the `require_manual_request_approval` variable in your `fides.toml` configuration file must be set to `TRUE`.
 
 To process pending privacy requests, a list of privacy request IDs must be sent to the `approve` or `deny` endpoints. Both endpoints support processing requests in bulk.
 

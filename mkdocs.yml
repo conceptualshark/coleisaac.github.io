@@ -3,8 +3,8 @@ site_name: Cole Isaac, Technical Writer
 # Themes 
 theme:
   name: material
-  logo: /assets/logo.png
-  favicon: /assets/logo.png
+  logo: /assets/images/logo.png
+  favicon: /assets/images/logo.png
   palette: 
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -25,9 +25,11 @@ theme:
   features:
     - content.code.copy
     - navigation.expand
+    - navigation.indexes 
 plugins:
   - search
   - render_swagger
+  - glightbox
   
 # Extensions 
 markdown_extensions:
@@ -61,22 +63,22 @@ copyright: Copyright &copy; 2023 Cole Isaac Garbo
 
 # CSS and JS overrides 
 extra_css:
-  - assets/overrides.css
+  - assets/css/overrides.css
 
 # Navigation 
 nav:
-  - About: 'index.md'
-  - Resume: 'resume.md'
-  - 'Portfolio':
-    - API Documentation: 'portfolio/api-docs.md'
-    - 'Article: Privacy Regulations': 'portfolio/privacy-regulations.md'
-    - Installation Guide: 'portfolio/installation-guide.md'
-    - Release Newsletter: 'portfolio/release-newsletter.md'
-    - Release Notes: 'portfolio/release-notes.md'
-    - Style Guide: 'portfolio/style-guide.md'
-    - 'User Guide: Privacy Requests': 'portfolio/privacy-requests.md'
-    - 'User Guide: App Connectors': 'portfolio/connectors-guide.md'
-    - 'User Guide: SSL Certificates': 'portfolio/ssl-certificates.md'
+  - About: index.md
+  - Resume: resume.md
+  - Portfolio:
+    - portfolio/index.md
+    - 'API: Privacy Requests': portfolio/api-privacy-requests.md
+    - 'Article: Privacy Regulations': portfolio/article-privacy-regulations.md
+    - Installation Guide: portfolio/fides-installation-guide.md
+    - Release Newsletter: portfolio/release-newsletter.md
+    - Release Notes: portfolio/release-notes.md
+    - 'User Guide: Connectors': portfolio/guide-connectors.md
+    - 'User Guide: Privacy Center': portfolio/guide-privacy-center.md
+    - 'User Guide: SSL Certificates': portfolio/guide-ssl-certificates.md
 
 
 

@@ -1,9 +1,11 @@
-# API Documentation and Design
+# API Documentation: Referrals
 
-!!! Summary
-    The following is a simplified version of design document for a set of endpoints. The related microservice handled the storage and retrieval of referred or rejected customer applications, known as Referrals. 
+## Summary
+The following is a simplified version of design document for a set of endpoints. The related microservice handled the storage and retrieval of referred or rejected customer applications, known as Referrals. 
     
-    This document was created for internal use, education, and planning, and used for the ultimate creation of the REST service. It has been updated here to include interactive Swagger documentation, built using OpenAPI 3.0.
+This document was created for internal use, education, and planning, and used for the ultimate creation of the REST service. It has been updated here to include interactive Swagger documentation, built using OpenAPI 3.0.
+
+---
 
 ## Referral API
 All endpoints designed to create and return individual or multiple referrals.
