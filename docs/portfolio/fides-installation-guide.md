@@ -1,7 +1,9 @@
 # Installation and Deployment Guide
 
-!!! summary
-    What this guide do?
+## Summary
+What this guide do?
+
+---
 
 ## Deployment Overview
 A production-ready instance of Fides can be deployed leveraging the cloud infrastructure your organization is most familiar with.

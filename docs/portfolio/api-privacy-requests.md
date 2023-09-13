@@ -1,4 +1,4 @@
-# User Guide: Privacy Requests
+# API Documentation: Privacy Requests
 
 ## Summary
 
@@ -43,22 +43,22 @@ The above request will apply the `a-demo-policy` execution policy to all target 
 | `identities` | An array of objects. These objects identify any users whose data will be affected by the execution policy. Each object identifies a single user.  |
 
 
-### Enable subject identity verification 
+### Subject identity verification 
 Fides supports user verification prior to request processing. With identify verification enabled, a user will be emailed a six-digit code when they submit a privacy request. They must supply that verification code to Fides to continue privacy request execution.  
 
-To enable verification:
-- Set the `subject_identity_verification_required` variable in your `fides.toml` to `TRUE`. 
-
+!!! Note
+    To use identity verification, the `subject_identity_verification_required` variable in your `fides.toml` configuration file must be set to `TRUE`.
+    
 The privacy request status is set to `identity_unverified` until the verification request receives a response.
 
-```json title="<code>POST api/v1/privacy-request/<privacy_request_id>/verify</code>"
-{"code": "<verification code here>"}
+```json title="<code>POST api/v1/privacy-request/{privacy_request_id}/verify</code>"
+{"code": "verification code"}
 ```
 
-## Privacy request actions
-### Approve and deny privacy requests
+## Approve and deny privacy requests
 
- Fides processes privacy requests immediately by default. To review privacy requests before they are executed, the `require_manual_request_approval` variable in your `fides.toml` must be set to `TRUE`.
+!!! Note
+    Fides processes privacy requests immediately by default. To review privacy requests before they are executed, the `require_manual_request_approval` variable in your `fides.toml` configuration file must be set to `TRUE`.
 
 To process pending privacy requests, a list of privacy request IDs must be sent to the `approve` or `deny` endpoints. Both endpoints support processing requests in bulk.
 

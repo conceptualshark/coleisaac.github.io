@@ -1,4 +1,4 @@
-# User Guide: SSL Certificates [Download :fontawesome-solid-file-pdf:](/assets/pdfs/ssl-certificates.pdf){ .md-button .md-button--primary }
+# User Guide: SSL Certificates [Download :fontawesome-solid-file-pdf:](../assets/pdfs/ssl-certificates.pdf){ .md-button .md-button--primary }
 
 ## Overview 
 As part of ongoing content modernization efforts at [BeyondTrust](https://www.beyondtrust.com/docs/), an existing guide on SSL Certificate management registered as out-of-date in both instruction and style. Updating this guide required meeting with the Remote Support product SMEs, conducting independent research, and both rewriting and reformatting the existing content to match an internal documentation style guide. 
@@ -11,9 +11,3 @@ The resulting guide was more accessible and instructional for users of all skill
 
 ## Resources
 [Live Document](https://www.beyondtrust.com/docs/remote-support/how-to/sslcertificates/index.htm){ .md-button .md-button--primary } [Formatted PDF](../assets/pdfs/ssl-certificates.pdf){ .md-button .md-button--primary }
-
-
-## Skills and Tools
-- Markdown
-- HTML and CSS
-- Madcap Flare

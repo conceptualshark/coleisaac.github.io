@@ -7,11 +7,3 @@ Following the General Audience launch of a new product, BeyondTrust Support stak
 
 ## Resources
 [Live Document](https://www.beyondtrust.com/docs/identity-security-insights/how-to/connectors/get-started.htm){ .md-button .md-button--primary } [Formatted PDF](../assets/pdfs/connectors-guide.pdf){ .md-button .md-button--primary }
-
-
-## Skills and Tools
-- Markdown
-- HTML and CSS
-- Madcap Flare
-- QA environment testing
-- Browser DevTools/inspector and debugger

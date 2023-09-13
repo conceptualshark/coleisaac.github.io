@@ -71,15 +71,14 @@ nav:
   - Resume: resume.md
   - Portfolio:
     - portfolio/index.md
-    - API Documentation: portfolio/api-docs.md
-    - 'Article: Privacy Regulations': portfolio/privacy-regulations.md
-    - Installation Guide: portfolio/installation-guide.md
+    - 'API: Privacy Requests': portfolio/api-privacy-requests.md
+    - 'Article: Privacy Regulations': portfolio/article-privacy-regulations.md
+    - Installation Guide: portfolio/fides-installation-guide.md
     - Release Newsletter: portfolio/release-newsletter.md
     - Release Notes: portfolio/release-notes.md
-    - Style Guide: portfolio/style-guide.md
-    - 'User Guide: Privacy Requests': portfolio/privacy-requests.md
-    - 'User Guide: App Connectors': portfolio/connectors-guide.md
-    - 'User Guide: SSL Certificates': portfolio/ssl-certificates.md
+    - 'User Guide: Connectors': portfolio/guide-connectors.md
+    - 'User Guide: Privacy Center': portfolio/guide-privacy-center.md
+    - 'User Guide: SSL Certificates': portfolio/guide-ssl-certificates.md
 
 
 
