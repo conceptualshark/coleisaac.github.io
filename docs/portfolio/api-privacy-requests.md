@@ -60,7 +60,7 @@ The privacy request status is set to `identity_unverified` until the verificatio
 !!! Note
     Fides processes privacy requests immediately by default. To review privacy requests before they are executed, the `require_manual_request_approval` variable in your `fides.toml` configuration file must be set to `TRUE`.
 
-To process pending privacy requests, a list of privacy request IDs must be sent to the `approve` or `deny` endpoints. Both endpoints support processing requests in bulk.
+To process pending privacy requests, a list of privacy request IDs can be sent to either the `approve` or `deny` endpoints. Both endpoints support processing requests in bulk.
 
 ```json title="<code>PATCH api/v1/privacy-request/administrate/approve</code>"
 {
@@ -71,29 +71,27 @@ To process pending privacy requests, a list of privacy request IDs must be sent 
 }
 ```
 
-An optional denial reason can be provided when denying a privacy request:
+Optionally, a denial reason can be provided when denying a privacy request:
 ```json title="<code>PATCH api/v1/privacy-request/administrate/deny</code>"
 {
   "request_ids":[
     "pri_2d181f15-486d-4bcf-a871-f50ed9f95673",
     "pri_2d181f15-486d-4bcf-a871-f50ed9f95673"
   ],
-  "reason": "Requests denied because they're duplicates"
+  "reason": "Requests denied as duplicates"
 }
 ```
 
-### Monitor ongoing requests
+### Monitor in-progress requests
 Privacy requests can be monitored at any time throughout their execution by calling either of the following endpoints:
 
-```
-GET api/v1/privacy-request?request_id=<privacy_request_id>
-```
-
-```
-GET api/v1/privacy-request?external_id=<external_id>
+```title="GET request"
+api/v1/privacy-request?request_id={privacy_request_id}
 ```
 
-For more detailed examples and further privacy request filtering, see [Reporting on Privacy Requests](./reporting).
+```title="GET request"
+api/v1/privacy-request?external_id={external_id}
+```
 
 ### Restart failed requests
 To restart a failed privacy request, call the following endpoint with an empty request body:
@@ -102,10 +100,10 @@ To restart a failed privacy request, call the following endpoint with an empty r
 POST /api/v1/privacy-request/<privacy_request_id>/retry
 ```
 
-## Encrypt your requests
-Access request results can be optionally encrypted by supplying an `encryption_key` string in the request body. Fides uses the supplied `encryption_key` to encrypt the contents of your JSON and CSV results using an AES-256 algorithm in GCM mode.
+## Encrypt requests
+Access request results can be encrypted by supplying an `encryption_key` string in the request body. Fides uses the supplied `encryption_key` to encrypt the contents of your JSON and CSV results using an AES-256 algorithm in GCM mode.
 
-When converted to bytes, your `encryption_key` must be 16 bytes long. The data returned will have the nonce concatenated 
+Your `encryption_key` must be 16 bytes long. The data returned will have the nonce concatenated 
 to the encrypted data.
 
 ```json title="<code>POST /privacy-request</code>"
@@ -120,19 +118,18 @@ to the encrypted data.
 
 ```
 
-### Decrypt your results
+### Decrypt results
 
-If you specified an encryption key, Fides encrypted the result data using your key and an internally-generated `nonce` with an AES 256 algorithm in GCM mode. The return value is a 12-byte nonce plus the encrypted data that is b64 encoded together.
+Fides encrypts request data using your provided key, and an internally-generated nonce with an AES 256 algorithm in GCM mode. The return value is a 12-byte nonce plus the encrypted data that is b64 encoded together. 
 
 ```
 +------------------+-------------------+
 | nonce (12 bytes) | message (N bytes) |
 +------------------+-------------------+
 ```
+To decrypt the results, you must convert the message to bytes, decode the b64 string, and separate the 12-bite nonce from the encrypted message. You can then use any GCM decryption library to decrypt the message with your private encryption string.
 
-For example, if you specified an encryption key of `test--encryption`, and resulting data was uploaded to
-S3 in a JSON file `GPUiK9tq5k/HfBnSN+J+OvLXZ+GCisapdI2KGP7A1WK+dz1XHef+hWb/SjszdqdNVGvziyY6GF5KIrvrXgxjZuaAvgU='`, you would
-need to implement something similar to the snippet below to decrypt the result:
+In the example below, a message was encrypted using the key `test--encryption`, resulting in an encrypted string. After converting and decoding the b64 string, the nonce can be separated from the resulting bites, and the message decrypted using the AESGCM lirary.
 
 ```python title="Sample decryption"
 import json
@@ -140,7 +137,7 @@ import base64
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 encrypted: str = "GPUiK9tq5k/HfBnSN+J+OvLXZ+GCisapdI2KGP7A1WK+dz1XHef+hWb/SjszdqdNVGvziyY6GF5KIrvrXgxjZuaAvgU=" 
-encryption_key: str = "test--encryption".encode("utf-8")  # Only you know this
+encryption_key: str = "test--encryption".encode("utf-8")  # Your private encryption string
 
 encrypted_combined: bytes = base64.b64decode(encrypted)
 nonce: bytes = encrypted_combined[0:12]
@@ -156,10 +153,3 @@ json.loads(decrypted_str)
 ```python title="Sample result"
 >>> {"street": "test street", "state": "NY"}
 ```
-
-If CSV data was uploaded, each CSV in the zipfile was encrypted using a different nonce, so you'll need to follow
-a similar process for each CSV file.
-
-## Privacy request integrations
-
-* **Generic API interoperability**: Third party services can be authorized by creating additional OAuth clients. Tokens obtained from OAuth clients can be managed and revoked at any time. See [authenticating with OAuth](./oauth) for more information.

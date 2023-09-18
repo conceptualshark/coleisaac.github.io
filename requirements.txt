@@ -2,3 +2,4 @@ mkdocs
 mkdocs-material
 mkdocs-render-swagger-plugin
 mkdocs-glightbox
+mkdocs-open-in-new-tab

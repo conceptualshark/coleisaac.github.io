@@ -10,11 +10,11 @@
         "summary": "List Referrals",
         "operationId": "listPets",
         "tags": [
-          "pets"
+          "referrals"
         ],
         "parameters": [
           {
-            "name": "limit",
+            "name": "last",
             "in": "query",
             "description": "How many items to return at one time (max 100)",
             "required": false,
@@ -60,7 +60,7 @@
         "summary": "Create Referral",
         "operationId": "createPets",
         "tags": [
-          "pets"
+          "referrals"
         ],
         "responses": {
           "201": {
@@ -82,16 +82,15 @@
     "/referrals/{id}": {
       "get": {
         "summary": "Get Referral",
-        "operationId": "showPetById",
         "tags": [
-          "pets"
+          "referrals"
         ],
         "parameters": [
           {
-            "name": "petId",
+            "name": "referralid",
             "in": "path",
             "required": true,
-            "description": "The id of the pet to retrieve",
+            "description": "The ID of the referral to retrieve.",
             "schema": {
               "type": "string"
             }
@@ -126,29 +125,50 @@
     "schemas": {
       "Referral": {
         "type": "object",
+        "required": [
+          "referralID",
+          "product"
+        ],
         "properties": {
-        "referralID": 24,
-        "product": "PPD",
-        "submissionID": "454-jkj-400",
-        "applicationID": "545-kjk-500",
-        "submissionType": "New_Business|Renewal",
-        "email": "customer@example.com",
-        "policyNumber": "47-QAA-1232-02",
-        "status": "Rejected",
-        "dateReferred": "2021-03-12T16:24:52Z",
-        "dateCreated": "2021-03-12T16:24:52Z",
-        "dateUpdated": "2021-03-12T16:24:52Z",
-        "updatedBy": "admin@example.com",
-        "rules": [
-          {
-            "ruleInstanceID": 1001,
-            "ruleID": "cosmeticRatio",
-            "ruleType": "HIGH_RISK_PROCEDURES",
-            "ruleInstanceType": "triggered|underwritten",
-            "dateUpdated": "2021-03-12T16:24:52Z",
-            "updatedBy": "uw"
-          }
-        ]
+            "referralID": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "submissionID": {
+              "type": "string"
+            },
+            "applicationID": {
+              "type": "string"
+            },
+            "submissionType": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "policyNumber":{
+              "type": "string"
+            },
+            "status":{
+              "type": "string"
+            },
+            "dateReferred": {
+              "type": "string"
+            },
+            "dateCreated": {
+              "type": "string"
+            },
+            "dateUpdated": {
+              "type": "string"
+            },
+            "updatedBy": {
+              "type": "string"
+            },
+            "rules": { 
+              "$ref": "#/components/schemas/Rules" 
+            }
       }
     },
       "Referrals": {
@@ -173,6 +193,30 @@
             "type": "string"
           }
         }
+      },
+      "Rules": {
+        "type": "object",
+        "properties": 
+          {
+            "ruleInstanceID": {
+              "type": "integer"
+            },
+            "ruleID": {
+              "type": "string"
+            },
+            "ruleType": {
+              "type": "string"
+            },
+            "ruleInstanceType": {
+              "type": "string"
+            },
+            "dateUpdated": {
+              "type": "string"
+            },
+            "updatedBy": {
+              "type": "string"
+            }
+          }
       }
     }
   }
