@@ -12,7 +12,7 @@ These release notes are from a series of products across the [BeyondTrust](https
 === "Remote Support"
     ![Remote Support Release Notes](../assets/images/rs-release-notes.png)
 
-    [Live Document]: (https://www.beyondtrust.com/docs/release-notes/remote-support/base/base-7-0-0.htm){ .md-button .md-button--primary } [Formatted PDF](../assets/pdfs/rs-release-notes.pdf){ .md-button .md-button--primary }
+    [Live Document](https://www.beyondtrust.com/docs/release-notes/remote-support/base/base-7-0-0.htm){ .md-button .md-button--primary } [Formatted PDF](../assets/pdfs/rs-release-notes.pdf){ .md-button .md-button--primary }
 
 
 === "Privileged Remote Access"
