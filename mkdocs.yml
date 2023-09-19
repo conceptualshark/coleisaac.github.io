@@ -1,10 +1,13 @@
 site_name: Cole Isaac, Technical Writer
+repo_url: https://github.com/conceptualshark/conceptualshark.github.io
+repo_name: View this Repository
 
 # Themes 
 theme:
   name: material
   logo: /assets/images/logo.png
   favicon: /assets/images/logo.png
+
   palette: 
     # Dark mode
     - media: "(prefers-color-scheme: dark)"

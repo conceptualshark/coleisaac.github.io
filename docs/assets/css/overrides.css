@@ -159,7 +159,17 @@ p>.md-button {
     border-bottom: .05rem solid var(--md-default-fg-color--light);
 }
 
+.md-source__facts {
+    display: none;
+}
+
 /* Media queries */
+@media screen and (max-width: 59.9375em) {
+    .md-nav__source {
+        background-color: var(--accent);
+    }
+}
+
 @media screen and (max-width: 76.1875em) {
     .md-nav--primary .md-nav__title~.md-nav__list {
         box-shadow: unset;
