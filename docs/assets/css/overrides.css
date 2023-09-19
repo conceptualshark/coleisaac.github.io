@@ -51,10 +51,6 @@
     margin-left: unset;
 }
 
-.md-nav__title {
-    display: none;
-}
-
 .md-typeset #resume ul:not([hidden]) {
     column-count: 3;
 }
@@ -185,6 +181,19 @@ p>.md-button {
 @media screen and (max-width: 40em) {
     .swagger-ui .opblock .opblock-summary-path {
         max-width: unset !important;
+    }
+}
+
+@media screen and (max-width: 76.1875em) {
+    .md-nav--primary .md-nav__title {
+        background-color: var(--md-primary-fg-color);
+        color: var(--md-primary-bg-color);
+    }
+}
+
+@media screen and (max-width: 76.1875em) {
+    .md-nav--primary .md-nav__title .md-logo {
+        display: none;
     }
 }
 
