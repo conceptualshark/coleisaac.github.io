@@ -7,6 +7,8 @@ Per stakeholder request, sections of content were designed to appear on multiple
 
 The resulting guide was more accessible and instructional for users of all skill levels, and accurate to the current state of the product.
 
+---
+
 ![SSL Guide](../assets/images/ssl-guides.png)
 
 ## Resources

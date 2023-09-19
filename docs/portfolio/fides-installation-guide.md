@@ -1,24 +1,46 @@
 # Installation and Deployment Guide
 
 ## Summary
-What this guide do?
+
+Designed to instruct users on production-level deployments of the open-source [Fides](https://ethyca.com/) platform, this guide assumed a level of technical understanding on the part of the reader, and was written as a series of how-to articles geared towards engineering personas.
 
 ---
 
-## Deployment Overview
+## Deployment overview
 A production-ready instance of Fides can be deployed leveraging the cloud infrastructure your organization is most familiar with.
 
 Fully deployed, Fides consists of the following individual systems:
 
-1. [**Hosted Database**](#set-up-the-hosted-database): A PostgreSQL database server used for permanent storage of configuration data for the webserver.
-2. [**Hosted Cache**](#set-up-the-hosted-cache): A Redis database server used as a temporary cache during execution and task scheduling.
-3. [**Fides Weberver**](#set-up-the-webserver): The main application, which houses the Admin UI and API endpoints.
+1. **Hosted Database**: A [PostgreSQL](https://www.postgresql.org/) database used for permanent storage of configuration data.
+2. **Hosted Cache**: A [Redis](https://redis.io/) database used as a temporary cache for task scheduling and execution.
+3. **Fides Weberver**: The main application, which houses the Admin UI and all API endpoints.
 
-Optionally, the Fides [Privacy Center](#set-up-the-privacy-center-optional) can be deployed as a pre-built way to receive privacy requests.
+!!! Note
+    The Fides [Privacy Center](#set-up-the-privacy-center-optional) can be deployed as a pre-built way to receive privacy requests.
+
+## Project requirements
+The following is supported as the application database:
+
+- PostgreSQL: 12
+
+The following is supported as the application cache:
+
+- Redis: 6.2.0+
+
+Fides supports the following Python versions:
+
+- Python: 3.8+
+
+All of these must be installed, either locally or via Docker, before attempting to run Fides as an application. 
+
+!!! Note
+    If using Docker, the following minimum version is required:
+
+    - Docker: 20.10.11+
 
 ## Set up the hosted database
 
-Fides uses an application database for persistent storage. Any hosted PostgreSQL database that meets the current [project requirements](./installation/requirements.md) is acceptable, as long as it's accessible. 
+Fides uses an application database for persistent storage. Any hosted PostgreSQL database that meets the current [project requirements](#project-requirements) is acceptable, as long as it's accessible. 
 
 Options include:
 
@@ -26,17 +48,21 @@ Options include:
 * A self-hosted PostgreSQL Docker container with a persistent volume mount (e.g., a Kubernetes cluster)
 * A self-hosted PostgreSQL server (e.g., an EC2 server)
 
-!!! Tip "As long as your database will be accessible by your Fides webserver, there is no need to expose it to the public Internet."
+!!! Tip 
+    As long as your database will be accessible by your Fides webserver, there is no need to expose it to the public internet.
 
 ### Configure your database
-Follow the documentation for the option of your choice to configure a production-grade PostgreSQL database.
+Follow the documentation for the option of your choice to configure a production-grade PostgreSQL database, then:
 
-Once your database is up and running, create a **unique user** and **database** for Fides to use, and assign your Fides user a secure password.  
+1. Create a **unique user** for Fides to use
+2. Assign your Fides user a secure password
+3. Create a **database** for application storage
+4. Keep track of your connection credentials
 
 ### Update your Fides configuration
-Use your database information to set the following values in your Fides [configuration](./installation/configuration.md). The options for the `[postgres]` section of the `fides.toml` file are outlined below, but may be substituted with environment variables.
+In the `[postgres]` section of your `fides.toml` configuration file, update the following values with those configured for your database:
 
-| Name | Default | Description |
+| Variable | Default | Description |
 | :---- | :------- | :----------- |
 | `user` | `postgres` | The database user Fides will use to log in to the application database. |
 | `password`| `fides` | The password for the Fides user. |
@@ -46,134 +72,150 @@ Use your database information to set the following values in your Fides [configu
 
 ## Set up the hosted cache
 
-During privacy request execution, Fides collects result data in a temporary Redis cache that automatically expires to ensure personal data is never retained erroneously. Any hosted Redis database that meets the current [project requirements](./installation/requirements.md) is acceptable, from a Docker [Redis](https://hub.docker.com/_/redis) container to a managed service (e.g., AWS ElastiCache, GCP Memorystore, Azure Cache, Redis Cloud).
+During privacy request execution, Fides collects result data in a temporary Redis cache. This cache automatically expires to ensure personal data is never retained erroneously. 
 
-!!! Tip "As long as your cache will be accessible by your Fides webserver, there is no need to expose it to the public Internet."
+Any hosted Redis database that meets the current [project requirements](#project-requirements) is acceptable, including:
+
+- A Docker [Redis](https://hub.docker.com/_/redis) container 
+- A managed service (e.g., AWS ElastiCache, GCP Memorystore, Azure Cache, Redis Cloud)
+
+!!! Tip 
+    As long as your cache will be accessible by your Fides webserver, there is no need to expose it to the public internet.
 
 ### Configure your cache
-Follow the documentation for the option of your choice to configure a production-grade Redis cache.
+Follow the documentation for the option of your choice to configure a production-grade Redis cache, then:
 
-Once your cache is available, ensure you enable a password (via Redis [`AUTH`](https://redis.io/commands/auth)) to provide additional security, and keep track of your connection credentials.
+1. Enable a password (via Redis [`AUTH`](https://redis.io/commands/auth)) to provide additional security
+2. Keep track of your connection credentials 
 
 ### Update your Fides configuration
-Use your database information to set the following values in your Fides [configuration](./installation/configuration.md). The options for the `[redis]` section of the `fides.toml` file are outlined below, but may be substituted with environment variables.
+In the `[redis]` section of your `fides.toml` configuration file, update the following values with those configured for your cache:
 
-| Config Variable | Example | Description |
+| Variable | Example | Description |
 | :--- | :--- | :--- | 
 | `host` | N/A | The network address for the application Redis cache. |
 | `port` | `6379` | The port at which the application cache will be accessible. |
 | `user`  | N/A | The user with which to login to the Redis cache. |
 | `password` | N/A | The password with which to login to the Redis cache. |
-| `db_index` | N/A | The application will use this index in the Redis cache to cache data. |
+| `db_index` | N/A | The application will use this index to cache data. |
 
 ## Set up the webserver
 
-The Fides webserver is a [FastAPI](https://fastapi.tiangolo.com/) application with a [Uvicorn](https://www.uvicorn.org/) server to handle requests. The host requirements for the webserver are minimal:
+The Fides webserver is a [FastAPI](https://fastapi.tiangolo.com/) application with a [Uvicorn](https://www.uvicorn.org/) server to handle requests. 
 
-* A general purpose webserver (e.g. for AWS EC2, a `t2.small` or larger)
-* Docker version 20.10.8 or newer (if installing via Docker)
-* OR Python 3.8 or newer (if installing via Python)
-* No persistent storage requirements (this is handled by the hosted database)
+The host requirements for the webserver are:
 
-### Docker
-Ensure that Docker is running on your host, and satisfies the [minimum requirements](./installation/requirements.md).
+* A general purpose webserver (e.g. for AWS EC2, a t2.small or larger)
+* Docker version 20.10.8 or newer
 
-#### Pull the docker image
+!!! Note
+    The webserver has no persistent storage requirements  - this is handled by the hosted database.
+
+### Pull the docker image
 Run the following command to pull the latest image from Ethyca's [DockerHub](https://hub.docker.com/r/ethyca/fides):
 
 ```
 docker pull ethyca/fides
 ``` 
 
-#### Configure Fides
-A number of environment variables are required for a minimum working [configuration](./installation/configuration.md). You can provide a configuration by creating an `.env` file and passing it in via the [`--env-file {file}` option](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file), by providing individual variables with the `--env {VAR}` option, or directly to your docker host.
+### Configure Fides
+A number of environment variables are required for a minimum working configuration. 
 
-At a minimum, you'll need to configure the following:
+Provide the required configuration to your application by:
+
+- Creating an `.env` file, and passing it in via the [`--env-file {file}` option](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file)
+- Providing individual variables with the `--env {VAR}` option
+- Directly configuring your variables with your Docker host
+
+The following table represents the minimum required configuration: 
 
 | Config Variable | Example | Description |
 |---|---|---|
-| `FIDES__SECURITY__APP_ENCRYPTION_KEY` | athirtytwocharacterencryptionkey | An AES256 encryption key used for DB & JWE encryption. Must be exactly 32 characters (256bits). |
+| `FIDES__SECURITY__APP_ENCRYPTION_KEY` | N/A | An AES256 encryption key used for DB & JWE encryption. Must be exactly 32 characters (256 bits). |
 | `FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID` | fidesadmin | The client ID used for the "root" OAuth client. |
 | `FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET` | fidesadminsecret | The client secret used for the "root" OAuth client. |
 | `FIDES__DATABASE__SERVER` | postgres.internal | The hostname for your database server. |
 | `FIDES__DATABASE__PORT` | 5432 | The port for your database server. |
-| `FIDES__DATABASE__USER` | fides | The username Fides should use to access the database. |
-| `FIDES__DATABASE__PASSWORD` | fidessecret | The password Fides should use to access the database |
+| `FIDES__DATABASE__USER` | fides | The username Fides will use to access the database. |
+| `FIDES__DATABASE__PASSWORD` | fidessecret | The password Fides will use to access the database |
 | `FIDES__DATABASE__DB` | fides | The postgres database name. |
 | `FIDES__REDIS__HOST` | redis.internal | The hostname for your Redis server. |
 | `FIDES__REDIS__PORT` | 6379 | The port for your Redis server. |
-| `FIDES__REDIS__PASSWORD` | fidessecret | The password Fides should use to access Redis. |
+| `FIDES__REDIS__PASSWORD` | fidessecret | The password Fides will use to access Redis. |
 
 
-#### Start your server
+### Start your server
 
-Once pulled, you can start your server with:
+Once configured, start your server with the following command:
 
 ```
 docker run ethyca/fides -p 8080:8080
 ```
 
-To include your environment variables, you can run the following: 
-```sh
-docker run \
--p 8080:8080 \
---env FIDES__SECURITY__APP_ENCRYPTION_KEY="athirtytwocharacterencryptionkey" \
---env FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID="fidesadmin" \
---env FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET="fidesadminsecret" \
---env FIDES__DATABASE__SERVER="postgres.internal" \
---env FIDES__DATABASE__PORT="5432" \
---env FIDES__DATABASE__USER="fides" \
---env FIDES__DATABASE__PASSWORD="fidessecret" \
---env FIDES__DATABASE__DB="fides" \
---env FIDES__REDIS__HOST="redis.internal" \
---env FIDES__REDIS__PORT=6379 \
---env FIDES__REDIS__PASSWORD="fidessecret" \
-ethyca/fides
-```
+=== "Environment Variables"
+    ```sh title="Start the server with environment variables"
+    docker run \
+    -p 8080:8080 \
+    --env FIDES__SECURITY__APP_ENCRYPTION_KEY="athirtytwocharacterencryptionkey" \
+    --env FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID="fidesadmin" \
+    --env FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET="fidesadminsecret" \
+    --env FIDES__DATABASE__SERVER="postgres.internal" \
+    --env FIDES__DATABASE__PORT="5432" \
+    --env FIDES__DATABASE__USER="fides" \
+    --env FIDES__DATABASE__PASSWORD="fidessecret" \
+    --env FIDES__DATABASE__DB="fides" \
+    --env FIDES__REDIS__HOST="redis.internal" \
+    --env FIDES__REDIS__PORT=6379 \
+    --env FIDES__REDIS__PASSWORD="fidessecret" \
+    ethyca/fides
+    ```
 
-If you prefer to create your .env file and pass an `--env-file` variable: 
-```
-docker run \
--p 8080:8080 \
---env-file=<ENV FILE NAME>.env \
-ethyca/fides
-```
+=== "`.env` file"
+    ``` title="Start the server with an <code>env</code> file"
+    docker run \
+    -p 8080:8080 \
+    --env-file=config.env \
+    ethyca/fides
+    ```
 
-```sh title="<code>config.env</code>"
-FIDES__SECURITY__APP_ENCRYPTION_KEY="athirtytwocharacterencryptionkey" 
-FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID="fidesadmin" 
-FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET="fidesadminsecret" 
-FIDES__DATABASE__SERVER="postgres.internal" 
-FIDES__DATABASE__PORT="5432" 
-FIDES__DATABASE__USER="fides" 
-FIDES__DATABASE__PASSWORD="fidessecret" 
-FIDES__DATABASE__DB="fides" 
-FIDES__REDIS__HOST="redis.internal" 
-FIDES__REDIS__PORT=6379 
-FIDES__REDIS__PASSWORD="fidessecret"
-```
+    ```sh title="<code>config.env</code>"
+    FIDES__SECURITY__APP_ENCRYPTION_KEY="athirtytwocharacterencryptionkey" 
+    FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID="fidesadmin" 
+    FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET="fidesadminsecret" 
+    FIDES__DATABASE__SERVER="postgres.internal" 
+    FIDES__DATABASE__PORT="5432" 
+    FIDES__DATABASE__USER="fides" 
+    FIDES__DATABASE__PASSWORD="fidessecret" 
+    FIDES__DATABASE__DB="fides" 
+    FIDES__REDIS__HOST="redis.internal" 
+    FIDES__REDIS__PORT=6379 
+    FIDES__REDIS__PASSWORD="fidessecret"
+    ```
 
-Note that there's no need for a persistent volume mount. The webserver is fully ephemeral, and relies on the database for its permanent state.
+!!! Note
+    There is no need for a persistent volume mount. The webserver is fully ephemeral, and relies on the database for its permanent state.
 
 ### Test the webserver
 
-To test that your server is running, visit `http://{server_url}/health` in your browser (e.g. http://0.0.0.0:8080/health) and you should see `{"webserver": "healthy", "database": "healthy", "cache": "healthy"}`. 
+To test that your server is running, visit `http://{server_url}/health` in your browser (e.g. `http://0.0.0.0:8080/health`).
+
+```title="A healthy webserver response"
+{"webserver": "healthy", "database": "healthy", "cache": "healthy"}
+``` 
 
 You can also visit the hosted UI at `http://{server_url}/`.
 
 ## Set up the Privacy Center (Optional)
 
-Ensure that Docker is running on your host, and satisfies the [minimum requirements](./installation/requirements.md).
+Ensure that Docker is running on your host, and satisfies the [minimum requirements](#project-requirements).
 
 Run the following command to pull the latest image from Ethyca's [DockerHub](https://hub.docker.com/r/ethyca/fides):
 
 ```
 docker pull ethyca/fides-privacy-center
-``` 
+```
 
-More information about configuration options can be found [here](./ui/privacy_center.md).
-
-Once pulled and configured, you can run the following within your project to start the server: 
+Once pulled, run the following within your project to start the server: 
 
 ```sh
 docker run --rm \
@@ -181,3 +223,5 @@ docker run --rm \
   -p 3000:3000 ethyca/fides-privacy-center:latest
 ```
 
+!!! Info
+    For more information on customizing your privacy request webpage, see [Configure the Privacy Center](./guide-privacy-center.md).

@@ -25,11 +25,11 @@ theme:
   features:
     - content.code.copy
     - navigation.expand
-    - navigation.indexes 
 plugins:
   - search
   - render_swagger
   - glightbox
+  - open-in-new-tab
   
 # Extensions 
 markdown_extensions:
@@ -43,6 +43,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.details
+  - def_list
   - md_in_html
   - attr_list
   - admonition
@@ -70,8 +71,8 @@ nav:
   - About: index.md
   - Resume: resume.md
   - Portfolio:
-    - portfolio/index.md
-    - 'API: Privacy Requests': portfolio/api-privacy-requests.md
+    - 'API Reference: Privacy Requests': portfolio/api-privacy-requests.md
+    - 'API Reference: Referrals': portfolio/api-referrals.md
     - 'Article: Privacy Regulations': portfolio/article-privacy-regulations.md
     - Installation Guide: portfolio/fides-installation-guide.md
     - Release Newsletter: portfolio/release-newsletter.md

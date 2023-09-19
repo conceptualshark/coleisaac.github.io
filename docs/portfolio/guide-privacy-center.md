@@ -178,4 +178,4 @@ h2.chakra-heading {
 }
 ```
 
-A list of properties is available in the [Chakra documentation](https://chakra-ui.com/docs/styled-system/style-props).
+A list of configurable properties is available in the [Chakra documentation](https://chakra-ui.com/docs/styled-system/style-props).

@@ -11,44 +11,45 @@ This document was created for internal use, education, and planning, and used fo
 All endpoints designed to create and return individual or multiple referrals.
 
 <div id="api" markdown>
-
-### Retrieve a list of Referrals
-|-|-|
-|--|--|
-| Method: | `GET` |
+### Create a new Referral
+| - | - |
+|---|---|
+| Method: | `POST` |
 | URL: | `/referrals` |
+| Headers: | `content-type application/json` |
 
-Returns a list of Referral objects.
+Add a new Referral to the database. Response will include a generated unique Referral ID.
 
 ``` json title="Reponse"
 {
-   "totalCount": 1,
-   "referrals": [
-       {
-           "referralID": 24,
-           "product": "PPD",
-           "submissionID": "454-jkj-400",
-           "applicationID": "545-kjk-500",
-           "submissionType": "New_Business|Renewal",
-           "email": "customer@example.com",
-           "policyNumber": "47-QAA-1232-02",
-           "status": "Rejected",
-           "dateReferred": "2021-03-12T16:24:52Z",
-           "dateCreated": "2021-03-12T16:24:52Z",
-           "dateUpdated": "2021-03-12T16:24:52Z",
-           "updatedBy": "admin@example.com",
-           "rules": [
-               {
-                   "ruleInstanceID": 1001,
-                   "ruleID": "cosmeticRatio",
-                   "ruleType": "HIGH_RISK_PROCEDURES",
-                   "ruleInstanceType": "triggered|underwritten",
-                   "dateUpdated": "2021-03-12T16:24:52Z",
-                   "updatedBy": "uw"
-               }
-           ]
-       }
-   ]
+    "product": "PPD",
+    "productVersion": "1.0.1",
+    "submissionID": "454-jkj-400",
+    "applicationID": "545-kjk-500",
+    "submissionType": "New_Business|Renewal",
+    "email": "customer@example.com",
+    "policyNumber": "47-QAA-1232-02",
+    "dateUpdated": "2021-05-13T07:30:49Z",
+    "dateReferred": "2021-03-12T16:24:52Z",
+    "dateCreated": "2021-03-12T16:24:52Z",
+    "updatedBy": "admin@example.com",
+    "rules": [
+        {
+            "ruleID": "cosmeticRatio",
+            "ruleType": "HIGH_RISK_PROCEDURES",
+            "ruleInstanceType": "triggered|underwritten",
+            "updatedBy": "uw"
+        }
+    ]
+}
+```
+
+!!! Note
+    `submissionType`, `applicationID`, and `rules` may differ by product line.
+
+``` json title="Reponse"
+{
+    "referralID": 1001
 }
 ```
 
@@ -87,45 +88,50 @@ Returns a single Referral matching the provided ID.
 }
 ```
 
-### Create a new Referral
-| - | - |
-|---|---|
-| Method: | `POST` |
-| URL: | `/referrals` |
-| Headers: | `content-type application/json` |
+### Retrieve a list of Referrals
+|-|-|
+|--|--|
+| Method: | `GET` |
+| URL: | `/referrals?lastUpdateTime={lastUpdateTime}` |
+
+#### Query parameters
+`lastUpdateTime` **string**
+: A valid Golang datetime format, e.g. `YYYY-DD-MM HH:MM:SS`.
 
 !!! Note
-    `Submission`, `Application`, and `Rules` may differ by product line.
+    A `GET` request to the `/referrals` endpoint will retrieve all referrals.
 
-Add a new Referral to the database. Response must include the generated unique Referral ID.
-
-``` json title="Reponse"
-{
-    "product": "PPD",
-    "productVersion": "1.0.1",
-    "submissionID": "454-jkj-400",
-    "applicationID": "545-kjk-500",
-    "submissionType": "New_Business|Renewal",
-    "email": "customer@example.com",
-    "policyNumber": "47-QAA-1232-02",
-    "dateUpdated": "2021-05-13T07:30:49Z",
-    "dateReferred": "2021-03-12T16:24:52Z",
-    "dateCreated": "2021-03-12T16:24:52Z",
-    "updatedBy": "admin@example.com",
-    "rules": [
-        {
-            "ruleID": "cosmeticRatio",
-            "ruleType": "HIGH_RISK_PROCEDURES",
-            "ruleInstanceType": "triggered|underwritten",
-            "updatedBy": "uw"
-        }
-    ]
-}
-```
+Returns a list of Referral objects created or updated since the provided `lastUpdateTime`, including a count of all objects returned.
 
 ``` json title="Reponse"
 {
-    "referralID": 1001
+   "totalCount": 1,
+   "referrals": [
+       {
+           "referralID": 24,
+           "product": "PPD",
+           "submissionID": "454-jkj-400",
+           "applicationID": "545-kjk-500",
+           "submissionType": "New_Business|Renewal",
+           "email": "customer@example.com",
+           "policyNumber": "47-QAA-1232-02",
+           "status": "Rejected",
+           "dateReferred": "2021-03-12T16:24:52Z",
+           "dateCreated": "2021-03-12T16:24:52Z",
+           "dateUpdated": "2021-03-12T16:24:52Z",
+           "updatedBy": "admin@example.com",
+           "rules": [
+               {
+                   "ruleInstanceID": 1001,
+                   "ruleID": "cosmeticRatio",
+                   "ruleType": "HIGH_RISK_PROCEDURES",
+                   "ruleInstanceType": "triggered|underwritten",
+                   "dateUpdated": "2021-03-12T16:24:52Z",
+                   "updatedBy": "uw"
+               }
+           ]
+       }
+   ]
 }
 ```
 </div>
@@ -134,8 +140,8 @@ Add a new Referral to the database. Response must include the generated unique R
 | Code | Definition |
 |---|---|
 | `201` | Success. The referral was created or retrieved successfully. |
-| `400` | Wrong parameters. Invalid or missing mandatory data (e.g. status = “happy”). |
-| `500` | Server encountered an error while serving this request. |
+| `400` | Malformed request. Invalid or missing mandatory data. |
+| `500` | The server encountered an error while handling this request. |
 
-## Swagger Docs
+## Swagger Documentation
 !!swagger referrals.json!!

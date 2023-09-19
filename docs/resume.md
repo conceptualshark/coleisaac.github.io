@@ -1,4 +1,4 @@
-# Cole Isaac, MSCS [Download :fontawesome-solid-file-pdf:](./assets/garbo-cv.pdf){ .md-button .md-button--primary }
+# Cole Isaac, MSCS [Download :fontawesome-solid-file-pdf:](./assets/pdfs/garbo-cv.pdf){ .md-button .md-button--primary }
 
 A passionate communicator with a mind for organization and analysis, culminating in documentation that is accurate, accessible, and effective. Dedicated to advocacy in all forms: user, teammate, and self. 
 

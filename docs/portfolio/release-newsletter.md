@@ -2,7 +2,7 @@
 
 ## Summary
 
-While serving as a Technical Writer for Ethyca, a software company creating automation tools for data privacy compliance, I was tasked with drafting and releasing our bimonthly newsletter for their legacy product. Newsletters communicating product information, updates, and changes are important for maintaining [SOC 2 compliance](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2). 
+A bimonthly newsletter for the privacy automation compmany [Ethyca](https://ethyca.com/), communicatining ongoing maintenance to the company's legacy product. This newsletter, designed to communicate product information, updates, and changes, was important for maintaining [SOC 2 compliance](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2). 
 
 ---
 
