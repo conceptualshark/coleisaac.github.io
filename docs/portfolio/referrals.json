@@ -7,35 +7,25 @@
   "paths": {
     "/referrals": {
       "get": {
+        "description": "Returns a list of referrals from the provided lastUpdateTime.",
         "summary": "List Referrals",
-        "operationId": "listPets",
         "tags": [
           "referrals"
         ],
         "parameters": [
           {
-            "name": "last",
+            "name": "lastUpdateTime",
             "in": "query",
-            "description": "How many items to return at one time (max 100)",
+            "description": "The timestamp of the last database update.",
             "required": false,
             "schema": {
-              "type": "integer",
-              "maximum": 100,
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "A paged array of pets",
-            "headers": {
-              "x-next": {
-                "description": "A link to the next page of responses",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
+          "201": {
+            "description": "The referral list was retrieved successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -44,8 +34,18 @@
               }
             }
           },
-          "default": {
-            "description": "unexpected error",
+          "400": {
+            "description": "Malformed request. Invalid or missing mandatory data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an error while handling this request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -57,17 +57,44 @@
         }
       },
       "post": {
+        "description": "Creates a new referral. Returns the new unique referral ID.",
         "summary": "Create Referral",
-        "operationId": "createPets",
         "tags": [
           "referrals"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Referral"
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
-            "description": "Null response"
+            "description": "The referral was created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/ReferralID"
+                }
+              }
+            }
           },
-          "default": {
-            "description": "unexpected error",
+          "400": {
+            "description": "Malformed request. Invalid or missing mandatory data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an error while handling this request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -81,13 +108,14 @@
     },
     "/referrals/{id}": {
       "get": {
+        "description": "Retrieves a single referral by the unique referral ID.",
         "summary": "Get Referral",
         "tags": [
           "referrals"
         ],
         "parameters": [
           {
-            "name": "referralid",
+            "name": "referralID",
             "in": "path",
             "required": true,
             "description": "The ID of the referral to retrieve.",
@@ -97,8 +125,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
+          "201": {
+            "description": "The referral was retrieved successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -107,8 +135,18 @@
               }
             }
           },
-          "default": {
-            "description": "unexpected error",
+          "400": {
+            "description": "Malformed request. Invalid or missing mandatory data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an error while handling this request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -130,52 +168,82 @@
           "product"
         ],
         "properties": {
-            "referralID": {
-              "type": "string"
-            },
-            "product": {
-              "type": "string"
-            },
-            "submissionID": {
-              "type": "string"
-            },
-            "applicationID": {
-              "type": "string"
-            },
-            "submissionType": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "policyNumber":{
-              "type": "string"
-            },
-            "status":{
-              "type": "string"
-            },
-            "dateReferred": {
-              "type": "string"
-            },
-            "dateCreated": {
-              "type": "string"
-            },
-            "dateUpdated": {
-              "type": "string"
-            },
-            "updatedBy": {
-              "type": "string"
-            },
-            "rules": { 
-              "$ref": "#/components/schemas/Rules" 
-            }
-      }
-    },
+          "referralID": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "submissionID": {
+            "type": "string"
+          },
+          "applicationID": {
+            "type": "string"
+          },
+          "submissionType": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "policyNumber": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "dateReferred": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "rules": {
+            "$ref": "#/components/schemas/Rules"
+          }
+        }
+      },
       "Referrals": {
         "type": "array",
-        "maxItems": 100,
         "items": {
           "$ref": "#/components/schemas/Referral"
+        }
+      },
+      "ReferralID": {
+        "type": "object",
+        "properties": {
+          "referralID": {
+            "type": "string"
+          }
+        }
+      },
+      "Rules": {
+        "type": "object",
+        "properties": {
+          "ruleInstanceID": {
+            "type": "integer"
+          },
+          "ruleID": {
+            "type": "string"
+          },
+          "ruleType": {
+            "type": "string"
+          },
+          "ruleInstanceType": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          }
         }
       },
       "Error": {
@@ -193,30 +261,6 @@
             "type": "string"
           }
         }
-      },
-      "Rules": {
-        "type": "object",
-        "properties": 
-          {
-            "ruleInstanceID": {
-              "type": "integer"
-            },
-            "ruleID": {
-              "type": "string"
-            },
-            "ruleType": {
-              "type": "string"
-            },
-            "ruleInstanceType": {
-              "type": "string"
-            },
-            "dateUpdated": {
-              "type": "string"
-            },
-            "updatedBy": {
-              "type": "string"
-            }
-          }
       }
     }
   }
