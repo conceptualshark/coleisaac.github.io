@@ -77,7 +77,7 @@ _Enrolled - University of Washington_
 <span class="bump"><strong>Principal Technical Writer</strong> (<em>Jan. 2022 - Jan. 2023</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Lead an initiative to refactor product documentation methods, including the migration of content between Mkdocs and Vercel deployment pipelines, and assisted in development of the final website design and information architecture
+:material-circle-medium: Led an initiative to refactor product documentation methods, including the migration of content between Mkdocs and Vercel deployment pipelines, and assisted in development of the final website design and information architecture
 
 :material-circle-medium: Authored feature documentation for both open-source software and paid product offerings, reducing the barrier of entry for new users and increasing customer retention
 
@@ -94,7 +94,7 @@ _Enrolled - University of Washington_
 <div class="indent" markdown>
 :material-circle-medium: Designed and developed the API and RDS-backed Golang microservice for storing and accessing subscription renewal records, including the successful migration of legacy data
 
-:material-circle-medium: Lead implementation on existing product enhancements, allowing product owners to customize desired features per product version through site-embedded dashboards
+:material-circle-medium: Led implementation on existing product enhancements, allowing product owners to customize desired features per product version through site-embedded dashboards
 
 :material-circle-medium: Developed a Golang event-listener Lambda to integrate SendGrid email automations with current and future microservices, reducing reliance on deprecated legacy software
 
