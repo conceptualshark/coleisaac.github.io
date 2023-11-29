@@ -16,7 +16,7 @@ _Northeastern University • Boston, MA_
 _International Association of Privacy Professionals_
 
 > **Certificate in Writing**  
-_Enrolled - University of Washington_
+_Ongoing - UCLA_
 
 ## Technical Knowledge
 ### Language Proficiencies
@@ -56,13 +56,15 @@ _Enrolled - University of Washington_
 <span class="bump"><strong>Technical Writer</strong> (<em>Jan. 2023 - Present</em>)</span>
 
 <div class="indent" markdown>
+:material-circle-medium: Modernize content delivery and deployment methods, introducing additional branch-based automations, linting, and link resting, quickly reducing publishing time and complexity
+
 :material-circle-medium: Serve as the primary technical writer for a cloud-based product launch, generating accurate and informed documentation based on stakeholder requirements and trial user feedback, leading to a successful GA release in September 2023 with continued fast-follow support
 
 :material-circle-medium: Collaborate with SMEs and project stakeholders to document release-related features and functionality across multiple BeyondTrust products, applications, and third-party SIEM and authentication integrations
 
 :material-circle-medium: Peer-review and manage change requests for teammates according to internal style guidelines, providing constructive feedback and direct edits to achieve a unified voice across products
 
-:material-circle-medium: Modernize existing content according to a Jobs-to-be-Done framework, refactoring and refreshing both guides and the project information architecture, increasing accessibility, usability, and reducing related Support Team responses
+:material-circle-medium: Update existing content according to a Jobs-to-be-Done framework, refactoring and refreshing both guides and the project information architecture, increasing accessibility, usability, and reducing related Support Team responses
 
 :material-circle-medium: Assist in the creation of agile development processes and project tracking initiatives, evaluating gaps in team knowledge to design internal education opportunities and reduce skill and knowledge siloing
 
