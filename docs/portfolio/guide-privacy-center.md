@@ -7,7 +7,7 @@ The Fides suite of open-source privacy tools also included a configurable "Priva
 ---
 
 ## Overview
-The Fides Privacy Center is a configurable webpage where users can request to access, update, or delete their data or update their consent preferences. Fides provides 
+The Fides Privacy Center is a configurable webpage where users can request to access, update, or delete their data or update their consent preferences. The Privacy Center can be modified by creating and editing a configuration file, and is then deployable alongside your Fides implementation.
 
 ## Create the configuration file
 
