@@ -16,7 +16,10 @@ _Northeastern University • Boston, MA_
 _International Association of Privacy Professionals_
 
 > **Certificate in Writing**  
-_Ongoing - UCLA_
+_Ongoing - University of California, Los Angeles_
+
+> **Graduate Certificate in Biology**  
+_North Carolina State University_
 
 ## Technical Knowledge
 ### Language Proficiencies
@@ -56,7 +59,7 @@ _Ongoing - UCLA_
 <span class="bump"><strong>Technical Writer</strong> (<em>Jan. 2023 - Present</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Modernize content delivery and deployment methods, introducing additional branch-based automations, linting, and link resting, quickly reducing publishing time and complexity
+:material-circle-medium: Modernize content delivery and deployment methods, introducing Git-based branch automations, linting, and link testing, reducing publishing time and pipeline complexity
 
 :material-circle-medium: Serve as the primary technical writer for a cloud-based product launch, generating accurate and informed documentation based on stakeholder requirements and trial user feedback, leading to a successful GA release in September 2023 with continued fast-follow support
 
