@@ -1,8 +1,10 @@
-# Technical Communications
+# Modern Documentation Engineering
 
-I'm Cole Isaac Garbo, a technical writer and editor based in the northeastern US. My passion is breaking impossible ideas down into clearly communicated parts: **I work to distill complex technical information into understandable, audience-informed content**.
+I'm Cole Isaac Garbo, a technical writer and editor based in the northeastern US. My goal is to break complex technical information into clearly communicated content; my passion is developing the workflows that make *good* documentation *great*. 
 
-I have a formal and professional education in software development, technical writing, and project organization, with an extensive background in research and behavioral science. These skills make me uniquely adapted for the challenges faced by the modern technical writer, who must be increasingly capable of independently testing API endpoints or developer software while balancing stakeholder needs.
+In practice, I employ a docs-as-code philosophy to create, manage, and deploy documentation for modern platforms.
+
+I have a formal and professional education in software development, technical writing, and project organization, with an extensive background in research and behavioral science. This history makes me uniquely adapted for the challenges faced by the modern technical writer, who must be increasingly capable of independently developing publishing pipelines while balancing stakeholder needs. 
 
 Techincal writing exists at a crossroads of **collaboration**, **education**, and **information**. Review my [work experience](./resume.md) or [portfolio](./portfolio/api-privacy-requests.md) to see these pillars in action.
 
