@@ -1,6 +1,6 @@
 # Cole Isaac, MSCS [Download :fontawesome-solid-file-pdf:](./assets/pdfs/garbo-cv.pdf){ .md-button .md-button--primary }
 
-A passionate communicator with a mind for organization and analysis, culminating in documentation that is accurate, accessible, and effective. Dedicated to advocacy in all forms: user, teammate, and self. 
+A passionate communicator with a mind for organization and analysis, culminating in documentation that is accurate, accessible, and effective. Dedicated to a docs-as-code philosophy to create, manage, and deploy documentation for modern platforms.
 
 <div id="resume" markdown>
 ## Education
@@ -23,12 +23,16 @@ _North Carolina State University_
 
 ## Technical Knowledge
 ### Language Proficiencies
-- :fontawesome-brands-markdown: Markdown
+- :fontawesome-brands-markdown: Markdown and MDX
 - :fontawesome-brands-html5: HTML 
 - :fontawesome-brands-css3-alt: CSS
 - :simple-yaml: YAML
 - :material-code-json: JSON
 - :simple-javascript: Javascript
+- :simple-jquery: JQuery
+- :fontawesome-brands-node-js: Node
+- :simple-react: React 
+- :fontawesome-brands-vuejs: Vue
 - :fontawesome-brands-golang: Golang
 - :fontawesome-brands-java: Java
 - :simple-cplusplus: C/C++ 
@@ -36,53 +40,61 @@ _North Carolina State University_
 
 ### Skills, Systems & Tools
 - :simple-git: Git
-- :fontawesome-brands-jira: Jira
-- :fontawesome-brands-confluence: Confluence
+- :fontawesome-brands-jira: Jira/Issue Tracking
+- :fontawesome-brands-confluence: Confluence/CMS Platforms
 - :fontawesome-brands-github: Github
 - :octicons-logo-github-16: Github Pages
 - :simple-githubactions: Github Actions
+- :simple-azuredevops: DevOps Workflows
+- :simple-circleci: CI/CD Pipelines
 - :fontawesome-brands-docker: Docker
-- :material-typewriter: Madcap Flare
+- :simple-kubernetes: Kubernetes 
+- :material-typewriter: DITA and Diataxis
 - :simple-postman: Postman
+- :simple-docusaurus: Static Site Generators
 - :material-file-document: Mkdocs
 - :simple-hugo: Hugo
 - :simple-jekyll: Jekyll
 - :simple-openapiinitiative: Swagger/OpenAPI
 - :fontawesome-brands-figma: Figma
-- :simple-circleci: CI/CD 
+- :simple-vercel: Vercel
+- :simple-heroku: Heroku
+- :simple-netlify: Netlify
+- :fontawesome-brands-aws: AWS
 - :material-api: API Documentation
 - :simple-semver: Release Notes
 - :fontawesome-solid-arrows-spin: Agile Methodologies
+- :material-code-equal: Docs-as-Code
 	
 ## Recent Work Experience
 ### BeyondTrust
 <span class="bump"><strong>Technical Writer</strong> (<em>Jan. 2023 - Present</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Modernize content delivery and deployment methods, introducing Git-based branch automations, linting, and link testing, reducing publishing time and pipeline complexity
+:material-circle-medium: Modernized content delivery and deployment methods, introducing additional branch-based automations, linting, and link testing to existing DevOps pipelines in Github and Buddy, reducing publishing time and deployment complexity
 
-:material-circle-medium: Serve as the primary technical writer for a cloud-based product launch, generating accurate and informed documentation based on stakeholder requirements and trial user feedback, leading to a successful GA release in September 2023 with continued fast-follow support
+:material-circle-medium: Created new agile development processes and project tracking initiatives, evaluating gaps in team knowledge to design internal training opportunities and reduce skill and knowledge siloing
 
-:material-circle-medium: Collaborate with SMEs and project stakeholders to document release-related features and functionality across multiple BeyondTrust products, applications, and third-party SIEM and authentication integrations
+:material-circle-medium: Designed a cross-functional education plan to promote team enablement and development, training multiple teammates on content delivery pipelines, Git methodologies, and CLI tools 
 
-:material-circle-medium: Peer-review and manage change requests for teammates according to internal style guidelines, providing constructive feedback and direct edits to achieve a unified voice across products
+:material-circle-medium: Refreshed existing content according to a Diataxis framework, refactoring and updating guides and project information architecture for modern audiences, ultimately increasing accessibility, usability, and reducing Support Team requests
 
-:material-circle-medium: Update existing content according to a Jobs-to-be-Done framework, refactoring and refreshing both guides and the project information architecture, increasing accessibility, usability, and reducing related Support Team responses
+:material-circle-medium: Served as the primary technical writer for a cloud-based product launch, generating accurate and informed documentation based on stakeholder requirements and trial user feedback, leading to a successful GA release in September 2023 
 
-:material-circle-medium: Assist in the creation of agile development processes and project tracking initiatives, evaluating gaps in team knowledge to design internal education opportunities and reduce skill and knowledge siloing
+:material-circle-medium: Collaborated with SMEs and project stakeholders to document release-related features and functionality across multiple BeyondTrust products, applications, and third-party SIEM and authentication integrations
 
-:material-circle-medium: Participate in UX discussions and implementation to align product language with user feedback, ensuring guides and manuals reflect the latest product updates, and in-product documentation adheres to technical communication standards
+:material-circle-medium: Peer-reviewed and managed change requests for teammates according to internal style guidelines, providing constructive feedback and direct edits to achieve a unified voice across products
 
-:material-circle-medium: Manage research and design for the generation of in-product documentation across cloud products, utilizing single-source methods to ensure accuracy between projects and minimize maintenance
+:material-circle-medium: Led research into AI and automation implementations to improve content development times and reduce manual editorial processes
 
 :material-circle-medium: Coordinated documentation and annotation efforts to drive Gartner Magic Quadrant reporting, with BeyondTrust named a 2023 Leader in Privileged Access Management
 </div> 
 
 ### Ethyca
-<span class="bump"><strong>Principal Technical Writer</strong> (<em>Jan. 2022 - Jan. 2023</em>)</span>
+<span class="bump"><strong>Lead Technical Writer</strong> (<em>Jan. 2022 - Jan. 2023</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Led an initiative to refactor product documentation methods, including the migration of content between Mkdocs and Vercel deployment pipelines, and assisted in development of the final website design and information architecture
+:material-circle-medium: Led an update of product documentation and deployment methods, including the migration of content between existing Mkdocs and Vercel pipelines, Nextra markdown development, and a refactored information architecture
 
 :material-circle-medium: Authored feature documentation for both open-source software and paid product offerings, reducing the barrier of entry for new users and increasing customer retention
 
@@ -94,14 +106,14 @@ _North Carolina State University_
 </div>
 
 ### Berkshire Hathaway Specialty Insurance
-<span class="bump"><strong>Software Engineer</strong> (<em>May 2019 - Jan. 2022</em>)</span>
+<span class="bump"><strong>Software and Documentation Engineer</strong> (<em>May 2019 - Jan. 2022</em>)</span>
 
 <div class="indent" markdown>
-:material-circle-medium: Designed and developed the API and RDS-backed Golang microservice for storing and accessing subscription renewal records, including the successful migration of legacy data
+:material-circle-medium: Designed and developed the API for a Golang RDS microservice used to store and access subscription renewal records, including the successful migration of key legacy data
 
 :material-circle-medium: Led implementation on existing product enhancements, allowing product owners to customize desired features per product version through site-embedded dashboards
 
-:material-circle-medium: Developed a Golang event-listener Lambda to integrate SendGrid email automations with current and future microservices, reducing reliance on deprecated legacy software
+:material-circle-medium: Developed a Golang event-listener Lambda to integrate third-party email automations with current and future microservices, reducing reliance on deprecated legacy software
 
 :material-circle-medium: Independently researched and implemented an AWS-backed streaming pipeline for storing event records published by internal microservices, assisting in audit compliance, error logging, and incident triage
 
