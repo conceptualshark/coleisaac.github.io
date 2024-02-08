@@ -1,0 +1,1321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../article-privacy-regulations/">
+      
+      
+        <link rel="next" href="../release-newsletter/">
+      
+      
+      <link rel="icon" href="/assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+    
+    
+      
+        <title>Installation Guide - Cole Isaac, Technical Writer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/overrides.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-and-deployment-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cole Isaac, Technical Writer" class="md-header__button md-logo" aria-label="Cole Isaac, Technical Writer" data-md-component="logo">
+      
+  <img src="/assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cole Isaac, Technical Writer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/conceptualshark/conceptualshark.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View this Repository
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cole Isaac, Technical Writer" class="md-nav__button md-logo" aria-label="Cole Isaac, Technical Writer" data-md-component="logo">
+      
+  <img src="/assets/images/logo.png" alt="logo">
+
+    </a>
+    Cole Isaac, Technical Writer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/conceptualshark/conceptualshark.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View this Repository
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resume
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Portfolio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Portfolio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-privacy-requests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference: Privacy Requests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-referrals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference: Referrals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../article-privacy-regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Article: Privacy Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-hosted-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the hosted database
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the hosted database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-your-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure your database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-fides-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update your Fides configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-hosted-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the hosted cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the hosted cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-your-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure your cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-fides-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update your Fides configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the webserver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the webserver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-the-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull the docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-fides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Fides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start your server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the webserver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-privacy-center-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the Privacy Center (Optional)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-newsletter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Newsletter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-connectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide: Connectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-privacy-center/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide: Privacy Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-ssl-certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide: SSL Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-hosted-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the hosted database
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the hosted database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-your-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure your database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-fides-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update your Fides configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-hosted-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the hosted cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the hosted cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-your-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure your cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-fides-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update your Fides configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the webserver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the webserver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-the-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull the docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-fides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Fides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start your server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the webserver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-privacy-center-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the Privacy Center (Optional)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="installation-and-deployment-guide">Installation and Deployment Guide</h1>
+<h2 id="summary">Summary</h2>
+<p>Designed to instruct users on production-level deployments of the open-source <a href="https://ethyca.com/">Fides</a> platform, this guide assumed a level of technical understanding on the part of the reader, and was written as a series of how-to articles geared towards engineering personas.</p>
+<hr />
+<h2 id="deployment-overview">Deployment overview</h2>
+<p>A production-ready instance of Fides can be deployed leveraging the cloud infrastructure your organization is most familiar with.</p>
+<p>Fully deployed, Fides consists of the following individual systems:</p>
+<ol>
+<li><strong>Hosted Database</strong>: A <a href="https://www.postgresql.org/">PostgreSQL</a> database used for permanent storage of configuration data.</li>
+<li><strong>Hosted Cache</strong>: A <a href="https://redis.io/">Redis</a> database used as a temporary cache for task scheduling and execution.</li>
+<li><strong>Fides Weberver</strong>: The main application, which houses the Admin UI and all API endpoints.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Fides <a href="#set-up-the-privacy-center-optional">Privacy Center</a> can be deployed as a pre-built way to receive privacy requests.</p>
+</div>
+<h2 id="project-requirements">Project requirements</h2>
+<p>The following is supported as the application database:</p>
+<ul>
+<li>PostgreSQL: 12</li>
+</ul>
+<p>The following is supported as the application cache:</p>
+<ul>
+<li>Redis: 6.2.0+</li>
+</ul>
+<p>Fides supports the following Python versions:</p>
+<ul>
+<li>Python: 3.8+</li>
+</ul>
+<p>All of these must be installed, either locally or via Docker, before attempting to run Fides as an application. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using Docker, the following minimum version is required:</p>
+<ul>
+<li>Docker: 20.10.11+</li>
+</ul>
+</div>
+<h2 id="set-up-the-hosted-database">Set up the hosted database</h2>
+<p>Fides uses an application database for persistent storage. Any hosted PostgreSQL database that meets the current <a href="#project-requirements">project requirements</a> is acceptable, as long as it's accessible. </p>
+<p>Options include:</p>
+<ul>
+<li>A managed PostgreSQL database services (e.g., AWS RDS, GCP Cloud SQL, Azure Database)</li>
+<li>A self-hosted PostgreSQL Docker container with a persistent volume mount (e.g., a Kubernetes cluster)</li>
+<li>A self-hosted PostgreSQL server (e.g., an EC2 server)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As long as your database will be accessible by your Fides webserver, there is no need to expose it to the public internet.</p>
+</div>
+<h3 id="configure-your-database">Configure your database</h3>
+<p>Follow the documentation for the option of your choice to configure a production-grade PostgreSQL database, then:</p>
+<ol>
+<li>Create a <strong>unique user</strong> for Fides to use</li>
+<li>Assign your Fides user a secure password</li>
+<li>Create a <strong>database</strong> for application storage</li>
+<li>Keep track of your connection credentials</li>
+</ol>
+<h3 id="update-your-fides-configuration">Update your Fides configuration</h3>
+<p>In the <code>[postgres]</code> section of your <code>fides.toml</code> configuration file, update the following values with those configured for your database:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>user</code></td>
+<td style="text-align: left;"><code>postgres</code></td>
+<td style="text-align: left;">The database user Fides will use to log in to the application database.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>password</code></td>
+<td style="text-align: left;"><code>fides</code></td>
+<td style="text-align: left;">The password for the Fides user.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>server</code></td>
+<td style="text-align: left;"><code>fides-db</code></td>
+<td style="text-align: left;">The hostname of the Postgres database server.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>port</code></td>
+<td style="text-align: left;"><code>5432</code></td>
+<td style="text-align: left;">The port at which the Postgres database will be accessible.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>db</code></td>
+<td style="text-align: left;"><code>fides</code></td>
+<td style="text-align: left;">The name of the Postgres database.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="set-up-the-hosted-cache">Set up the hosted cache</h2>
+<p>During privacy request execution, Fides collects result data in a temporary Redis cache. This cache automatically expires to ensure personal data is never retained erroneously. </p>
+<p>Any hosted Redis database that meets the current <a href="#project-requirements">project requirements</a> is acceptable, including:</p>
+<ul>
+<li>A Docker <a href="https://hub.docker.com/_/redis">Redis</a> container </li>
+<li>A managed service (e.g., AWS ElastiCache, GCP Memorystore, Azure Cache, Redis Cloud)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As long as your cache will be accessible by your Fides webserver, there is no need to expose it to the public internet.</p>
+</div>
+<h3 id="configure-your-cache">Configure your cache</h3>
+<p>Follow the documentation for the option of your choice to configure a production-grade Redis cache, then:</p>
+<ol>
+<li>Enable a password (via Redis <a href="https://redis.io/commands/auth"><code>AUTH</code></a>) to provide additional security</li>
+<li>Keep track of your connection credentials </li>
+</ol>
+<h3 id="update-your-fides-configuration_1">Update your Fides configuration</h3>
+<p>In the <code>[redis]</code> section of your <code>fides.toml</code> configuration file, update the following values with those configured for your cache:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>host</code></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">The network address for the application Redis cache.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>port</code></td>
+<td style="text-align: left;"><code>6379</code></td>
+<td style="text-align: left;">The port at which the application cache will be accessible.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>user</code></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">The user with which to login to the Redis cache.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>password</code></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">The password with which to login to the Redis cache.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>db_index</code></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">The application will use this index to cache data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="set-up-the-webserver">Set up the webserver</h2>
+<p>The Fides webserver is a <a href="https://fastapi.tiangolo.com/">FastAPI</a> application with a <a href="https://www.uvicorn.org/">Uvicorn</a> server to handle requests. </p>
+<p>The host requirements for the webserver are:</p>
+<ul>
+<li>A general purpose webserver (e.g. for AWS EC2, a t2.small or larger)</li>
+<li>Docker version 20.10.8 or newer</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The webserver has no persistent storage requirements  - this is handled by the hosted database.</p>
+</div>
+<h3 id="pull-the-docker-image">Pull the docker image</h3>
+<p>Run the following command to pull the latest image from Ethyca's <a href="https://hub.docker.com/r/ethyca/fides">DockerHub</a>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker pull ethyca/fides
+</span></code></pre></div>
+<h3 id="configure-fides">Configure Fides</h3>
+<p>A number of environment variables are required for a minimum working configuration. </p>
+<p>Provide the required configuration to your application by:</p>
+<ul>
+<li>Creating an <code>.env</code> file, and passing it in via the <a href="https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file"><code>--env-file {file}</code> option</a></li>
+<li>Providing individual variables with the <code>--env {VAR}</code> option</li>
+<li>Directly configuring your variables with your Docker host</li>
+</ul>
+<p>The following table represents the minimum required configuration: </p>
+<table>
+<thead>
+<tr>
+<th>Config Variable</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FIDES__SECURITY__APP_ENCRYPTION_KEY</code></td>
+<td>N/A</td>
+<td>An AES256 encryption key used for DB &amp; JWE encryption. Must be exactly 32 characters (256 bits).</td>
+</tr>
+<tr>
+<td><code>FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID</code></td>
+<td>fidesadmin</td>
+<td>The client ID used for the "root" OAuth client.</td>
+</tr>
+<tr>
+<td><code>FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET</code></td>
+<td>fidesadminsecret</td>
+<td>The client secret used for the "root" OAuth client.</td>
+</tr>
+<tr>
+<td><code>FIDES__DATABASE__SERVER</code></td>
+<td>postgres.internal</td>
+<td>The hostname for your database server.</td>
+</tr>
+<tr>
+<td><code>FIDES__DATABASE__PORT</code></td>
+<td>5432</td>
+<td>The port for your database server.</td>
+</tr>
+<tr>
+<td><code>FIDES__DATABASE__USER</code></td>
+<td>fides</td>
+<td>The username Fides will use to access the database.</td>
+</tr>
+<tr>
+<td><code>FIDES__DATABASE__PASSWORD</code></td>
+<td>fidessecret</td>
+<td>The password Fides will use to access the database</td>
+</tr>
+<tr>
+<td><code>FIDES__DATABASE__DB</code></td>
+<td>fides</td>
+<td>The postgres database name.</td>
+</tr>
+<tr>
+<td><code>FIDES__REDIS__HOST</code></td>
+<td>redis.internal</td>
+<td>The hostname for your Redis server.</td>
+</tr>
+<tr>
+<td><code>FIDES__REDIS__PORT</code></td>
+<td>6379</td>
+<td>The port for your Redis server.</td>
+</tr>
+<tr>
+<td><code>FIDES__REDIS__PASSWORD</code></td>
+<td>fidessecret</td>
+<td>The password Fides will use to access Redis.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="start-your-server">Start your server</h3>
+<p>Once configured, start your server with the following command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker run ethyca/fides -p 8080:8080
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Environment Variables</label><label for="__tabbed_1_2"><code>.env</code> file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sh highlight"><span class="filename">Start the server with environment variables</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>--env<span class="w"> </span><span class="nv">FIDES__SECURITY__APP_ENCRYPTION_KEY</span><span class="o">=</span><span class="s2">&quot;athirtytwocharacterencryptionkey&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>--env<span class="w"> </span><span class="nv">FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;fidesadmin&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--env<span class="w"> </span><span class="nv">FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;fidesadminsecret&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>--env<span class="w"> </span><span class="nv">FIDES__DATABASE__SERVER</span><span class="o">=</span><span class="s2">&quot;postgres.internal&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>--env<span class="w"> </span><span class="nv">FIDES__DATABASE__PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>--env<span class="w"> </span><span class="nv">FIDES__DATABASE__USER</span><span class="o">=</span><span class="s2">&quot;fides&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>--env<span class="w"> </span><span class="nv">FIDES__DATABASE__PASSWORD</span><span class="o">=</span><span class="s2">&quot;fidessecret&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>--env<span class="w"> </span><span class="nv">FIDES__DATABASE__DB</span><span class="o">=</span><span class="s2">&quot;fides&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>--env<span class="w"> </span><span class="nv">FIDES__REDIS__HOST</span><span class="o">=</span><span class="s2">&quot;redis.internal&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>--env<span class="w"> </span><span class="nv">FIDES__REDIS__PORT</span><span class="o">=</span><span class="m">6379</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>--env<span class="w"> </span><span class="nv">FIDES__REDIS__PASSWORD</span><span class="o">=</span><span class="s2">&quot;fidessecret&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>ethyca/fides
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><span class="filename">Start the server with an <code>env</code> file</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker run \
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-p 8080:8080 \
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>--env-file=config.env \
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ethyca/fides
+</span></code></pre></div>
+<div class="language-sh highlight"><span class="filename"><code>config.env</code></span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">FIDES__SECURITY__APP_ENCRYPTION_KEY</span><span class="o">=</span><span class="s2">&quot;athirtytwocharacterencryptionkey&quot;</span><span class="w"> </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">FIDES__SECURITY__OAUTH_ROOT_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;fidesadmin&quot;</span><span class="w"> </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">FIDES__SECURITY__OAUTH_ROOT_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;fidesadminsecret&quot;</span><span class="w"> </span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nv">FIDES__DATABASE__SERVER</span><span class="o">=</span><span class="s2">&quot;postgres.internal&quot;</span><span class="w"> </span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nv">FIDES__DATABASE__PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span><span class="w"> </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nv">FIDES__DATABASE__USER</span><span class="o">=</span><span class="s2">&quot;fides&quot;</span><span class="w"> </span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nv">FIDES__DATABASE__PASSWORD</span><span class="o">=</span><span class="s2">&quot;fidessecret&quot;</span><span class="w"> </span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nv">FIDES__DATABASE__DB</span><span class="o">=</span><span class="s2">&quot;fides&quot;</span><span class="w"> </span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nv">FIDES__REDIS__HOST</span><span class="o">=</span><span class="s2">&quot;redis.internal&quot;</span><span class="w"> </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nv">FIDES__REDIS__PORT</span><span class="o">=</span><span class="m">6379</span><span class="w"> </span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nv">FIDES__REDIS__PASSWORD</span><span class="o">=</span><span class="s2">&quot;fidessecret&quot;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no need for a persistent volume mount. The webserver is fully ephemeral, and relies on the database for its permanent state.</p>
+</div>
+<h3 id="test-the-webserver">Test the webserver</h3>
+<p>To test that your server is running, visit <code>http://{server_url}/health</code> in your browser (e.g. <code>http://0.0.0.0:8080/health</code>).</p>
+<div class="language-text highlight"><span class="filename">A healthy webserver response</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&quot;webserver&quot;: &quot;healthy&quot;, &quot;database&quot;: &quot;healthy&quot;, &quot;cache&quot;: &quot;healthy&quot;}
+</span></code></pre></div>
+<p>You can also visit the hosted UI at <code>http://{server_url}/</code>.</p>
+<h2 id="set-up-the-privacy-center-optional">Set up the Privacy Center (Optional)</h2>
+<p>Ensure that Docker is running on your host, and satisfies the <a href="#project-requirements">minimum requirements</a>.</p>
+<p>Run the following command to pull the latest image from Ethyca's <a href="https://hub.docker.com/r/ethyca/fides">DockerHub</a>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker pull ethyca/fides-privacy-center
+</span></code></pre></div>
+<p>Once pulled, run the following within your project to start the server: </p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/config:/app/config<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>ethyca/fides-privacy-center:latest
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information on customizing your privacy request webpage, see <a href="../guide-privacy-center/">Configure the Privacy Center</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Cole Isaac Garbo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/cole-isaac/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/conceptualshark" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="colegarbo@gmail.com" target="_blank" rel="noopener" title="email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../../js/open_in_new_tab.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
